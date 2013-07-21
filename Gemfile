@@ -7,6 +7,13 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
