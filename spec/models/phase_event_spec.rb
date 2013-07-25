@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-require 'spec_helper'
-
-describe PhaseEvent do
-  pending "add some examples to (or delete) #{__FILE__}"
-=======
 # == Schema Information
 #
 # Table name: phase_events
@@ -20,5 +14,4 @@ require 'spec_helper'
 describe PhaseEvent do
   it { should belong_to(:phase)}
   it { should belong_to(:event)}
->>>>>>> e14d6e602ed110f9e842c6fcbae2d2fae1bec5ea
 end

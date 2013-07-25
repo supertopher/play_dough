@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-require 'spec_helper'
-
-describe EventTimes do
-  pending "add some examples to (or delete) #{__FILE__}"
-=======
 # == Schema Information
 #
 # Table name: event_times
@@ -22,5 +16,4 @@ require 'spec_helper'
 
 describe EventTime do
   it { should belong_to(:event)}
->>>>>>> e14d6e602ed110f9e842c6fcbae2d2fae1bec5ea
 end
