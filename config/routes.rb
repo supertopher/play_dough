@@ -1,6 +1,13 @@
 PlayDough::Application.routes.draw do
+
   root :to => 'home#index'
   resources :phase
+  resources :home
+  resources :event
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
