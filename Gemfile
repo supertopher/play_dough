@@ -5,7 +5,11 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Use postgres for heroku
 gem 'pg'
+
+# Use rails admin for back-end
+gem 'rails_admin'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -43,3 +47,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
+gem "devise"
