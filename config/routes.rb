@@ -1,9 +1,8 @@
 PlayDough::Application.routes.draw do
 
   root :to => 'home#index'
-  resources :phase
-  resources :home
-  resources :event
+  resources :phases
+  resources :events
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
