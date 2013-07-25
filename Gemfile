@@ -13,6 +13,7 @@ gem 'rails_admin'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'pry'
   gem 'annotate'
   gem 'better_errors'

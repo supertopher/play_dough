@@ -12,5 +12,7 @@
 require 'spec_helper'
 
 describe Phase do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:phase_events)}
+  it { should have_many(:events).through(:phase_events)}
+  it { should have_many(:events).through(:phase_events)}
 end

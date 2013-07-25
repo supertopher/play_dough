@@ -14,6 +14,6 @@
 
 require 'spec_helper'
 
-describe EventTimes do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe EventTime do
+  it { should belong_to(:event)}
 end
