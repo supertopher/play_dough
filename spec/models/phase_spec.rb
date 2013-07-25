@@ -3,7 +3,7 @@
 # Table name: phases
 #
 #  id         :integer          not null, primary key
-#  phase      :integer
+#  number     :integer
 #  location   :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
