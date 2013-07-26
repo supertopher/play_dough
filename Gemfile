@@ -18,6 +18,7 @@ gem 'debugger'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'annotate'
