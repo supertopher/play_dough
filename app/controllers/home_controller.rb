@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @phases = Phase.all
   end
 
   def show

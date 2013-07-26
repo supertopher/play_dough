@@ -8,8 +8,13 @@ gem 'rails', '3.2.13'
 # Use postgres for heroku
 gem 'pg'
 
+gem 'haml-rails'
+
 # Use rails admin for back-end
 gem 'rails_admin'
+
+# Use debugger
+gem 'debugger'
 
 group :test, :development do
   gem 'rspec-rails'
