@@ -14,16 +14,20 @@
 
 
  nav{
-  font-family: 'Press Start 2P', cursive;
-  height: 2em;
+  font-family: 'Lato', sans-serif;
+  height: 2.5em;
   background-color: black;
   color: white;
   text-decoration: none;
 
-  .left_side_nav_links{
+  .right_side_nav_links{
     float: right;
     margin: 0.5em 5% auto auto;
     display: inline-block;
+  }
+
+  .lost_password{
+    font-size: 0.2em;
   }
 
   .logo{
