@@ -4,11 +4,15 @@
   <title>PlayDough</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "/layouts/navigation" %>
-<%= yield %>
 
-</body>
+  <%= render "/layouts/navigation" %>
+
+  <div class="main">
+    <%= yield %>
+  </main>
+</div>
 </html>
