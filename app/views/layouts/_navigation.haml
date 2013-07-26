@@ -1,5 +1,22 @@
 %nav
   = link_to 'PlayDough', root_path, class: "logo"
-  %span{class: "left_side_nav_links"}
-    = link_to 'Create Event', new_event_path
-    = link_to 'Create Phase', new_phase_path
+  %span{class: "right_side_nav_links"}
+    - if user_signed_in?
+      = link_to 'Create Event', new_event_path
+      = link_to 'Create Phase', new_phase_path
+      = link_to('Logout', destroy_user_session_path, :method => :delete)
+    - else
+      = form_tag user_session_path do
+        %span Login with email
+        = text_field_tag 'user[login]'
+        %span Password
+        = password_field_tag 'user[password]'
+        %span
+        = check_box_tag 'user[remember_me]'
+        %span
+        = label_tag 'user[remember_me]', 'Remember me'
+        %button Sign in
+        %span
+        = link_to "Password lost?", new_password_path('user')
+
+
