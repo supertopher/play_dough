@@ -10,8 +10,8 @@ class EventsController < ApplicationController
 
   def new
   	@event = Event.new
-  	# time_event = @event.event_times.build
-  	# time_event.build
+  	event_time = @event.event_times.build
+    @event.phase_events.build
   end
 
   def create
