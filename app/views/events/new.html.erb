@@ -1,7 +1,5 @@
 <h2>Create An Event</h2>
 
-<h2>Create An Event</h2>
-
 
 <h3>Your New Survey </h3>
 <%= form_for @event do |f| %>
@@ -17,6 +15,7 @@
     <%= phase_event.text_field :phase_id %>
     Event Id:
     <%= phase_event.text_field :event_id %>
+    <%= phase_event.select :phase_event, options_for_select(@phases)  %>
   <% end %>
 
 

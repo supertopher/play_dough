@@ -12,6 +12,8 @@ class EventsController < ApplicationController
   	@event = Event.new
   	event_time = @event.event_times.build
     @event.phase_events.build
+    @phases = Phase.all
+    @phases.map! {|phase| "phase #{phase.number} in #{phase.location}" }
   end
 
   def create
