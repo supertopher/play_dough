@@ -20,6 +20,14 @@
   color: white;
   text-decoration: none;
 
+  .white_bar{
+    margin-left: 0.5%;
+    display: inline-block;
+    width: 0.35%;
+    background-color: white;
+    height: 2em;
+  }
+
   .right_side_nav_links{
     float: right;
     margin: 0.5em 5% auto auto;
@@ -31,9 +39,10 @@
   }
 
   .logo{
-  font-size: 1.3em;
+    margin: auto;
+    font-size: 1.3em;
     display: inline-block;
-    margin: 0.3em auto auto 5%;
+    margin: 0.1em auto auto 0.5%;
   }
 
   a{
