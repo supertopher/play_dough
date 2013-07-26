@@ -15,4 +15,6 @@
 //= require_tree .
 $(function() {
   $("#event").datepicker();
+  // $('.login').hide();
+  // $('.login').html("" );
 });
