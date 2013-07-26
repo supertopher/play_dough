@@ -12,7 +12,7 @@
     - else
       = form_tag user_session_path do
         Log In
-        = text_field_tag 'user[login]', nil,  :placeholder => 'E-Mail'
+        = text_field_tag 'user[email]', nil,  :placeholder => 'E-Mail'
         = password_field_tag 'user[password]', nil, placeholder: 'Password'
         %button Sign in
         = check_box_tag 'user[remember_me]'
