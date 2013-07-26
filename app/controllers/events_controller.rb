@@ -10,8 +10,9 @@ class EventsController < ApplicationController
 
   def new
   	@event = Event.new
-  	event_time = @event.event_times.build
-    @event.phase_events.build
+    @event.phase_events.build.build_phase
+  	# event_time = @event.event_times.build
+    # @event.phase_events.build
     @phases = Phase.all
     @phases.map! {|phase| ["phase #{phase.number} in #{phase.location}", phase.id] }
   end

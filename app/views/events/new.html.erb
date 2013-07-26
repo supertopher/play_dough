@@ -9,17 +9,16 @@
   <p>Description: <%= f.text_field :description, :placeholder => "Enter your description here.."  %></p>
    <p>Url: <%= f.text_field :url, :placeholder => "Enter your url here.."  %></p>
   
-  Add this to a phase:
-  <p><%= f.fields_for :phase_event do |phase_event|  %></p>
-    Phase Id:
-    <%= phase_event.text_field :event_id %>
-    <%= phase_event.select :phase_id, options_for_select(@phases)  %>
-  <% end %>
 
 
-  <p><%= f.fields_for :event_time do |event_time|  %></p>
-    <%= render "event_times", :f => event_time %> 
-  <% end %>
+  <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
+        <%= phase_event_form.select :phase_id, options_for_select(@phases) %>
+      <% end %>
+
+
+  <p><%# f.fields_for :event_time do |event_time|  %></p>
+    <%# render "event_times", :f => event_time %> 
+  <%# end %>
   <p><%= f.submit %></p>
 <% end %>
 
