@@ -1,0 +1,9 @@
+%h2 Create a phase
+
+= form_for @phase do |f|
+  = f.label :number, "Number"
+  = f.text_field :number
+  = f.label :location, "Location"
+  = f.text_field :location
+  = f.submit "Submit", :disable_with => 'Submiting...'
+  
