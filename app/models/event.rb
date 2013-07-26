@@ -16,6 +16,6 @@ class Event < ActiveRecord::Base
   has_many :phase_events  
   has_many :phases, :through => :phase_events
   has_many :event_times
-
+  
 
 end
