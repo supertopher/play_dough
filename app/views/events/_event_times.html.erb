@@ -47,8 +47,10 @@
 
 <p>Start Time</p>
 
-<%= time_select 'event_time', 'event_time', {:ampm => true} %>
+<%= time_select 'event_time', 'start_event_time', {:ampm => true} %>
 <p>End Time</p>
 
-<%= time_select 'event_time', 'event_time', {:ampm => true} %>
+<div class="datetimeinput">
+</div> 
+<%= time_select 'event_time', 'end_event_time', {:ampm => true} %>
 
