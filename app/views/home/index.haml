@@ -1,6 +1,7 @@
 %h1 Welcome To Play Dough
 
 %h2 Here are the phases:
+
 - @phases.each do |phase|
   = link_to "Phase #{phase.number} in #{phase.location}", phase_path(phase)
   %br

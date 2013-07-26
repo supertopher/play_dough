@@ -9,4 +9,6 @@
   %body
     = render "/layouts/navigation"
     .main
+      - if flash[:notice]
+        .notice=flash[:notice]
       = yield
