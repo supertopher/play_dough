@@ -14,11 +14,19 @@
 
 
  nav{
-  font-family: 'Expletus Sans', cursive;
-  height: 2em;
+  font-family: 'Lato', sans-serif;
+  height: 2.5em;
   background-color: black;
   color: white;
   text-decoration: none;
+
+  .white_bar{
+    margin-left: 0.5%;
+    display: inline-block;
+    width: 0.35%;
+    background-color: white;
+    height: 2em;
+  }
 
   .right_side_nav_links{
     float: right;
@@ -26,10 +34,15 @@
     display: inline-block;
   }
 
+  .lost_password{
+    font-size: 0.2em;
+  }
+
   .logo{
-  font-size: 1.3em;
+    margin: auto;
+    font-size: 1.3em;
     display: inline-block;
-    margin: 0.3em auto auto 5%;
+    margin: 0.1em auto auto 0.5%;
   }
 
   a{

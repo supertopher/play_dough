@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function() {
+  // $('.login').hide();
+  // $('.login').html("" );
+});
