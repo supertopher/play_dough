@@ -11,10 +11,14 @@ class PhasesController < ApplicationController
     phase = Phase.new(params[:phase])
     if phase.save
       flash[:notice] = "You have created phase #{phase.number} at #{phase.location}."
-      redirect phases_path
+      redirect_to root_path
     else
       flash[:error] = "Something went wrong"
-      redirect phases_path
+      redirect_to new_phase_path
     end
+  end
+
+  def show
+    @phase = Phase.find(params[:id])
   end
 end

@@ -1,0 +1,8 @@
+%h1= "This is phase #{@phase.number} in #{@phase.location}"
+%h2 Here are its events:
+- @phase.events.each do |event|
+  = event.title
+  %br
+  = event.url
+  %br
+  = event.description

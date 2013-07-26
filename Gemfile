@@ -13,6 +13,9 @@ gem 'haml-rails'
 # Use rails admin for back-end
 gem 'rails_admin'
 
+# Use debugger
+gem 'debugger'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
