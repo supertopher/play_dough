@@ -2,8 +2,8 @@
 =@challenge_list.each do |this_challenge|
   %h2 Title: #{link_to this_challenge.name, challenge_path(this_challenge)}
   %p Actor ID: #{this_challenge.actor_id}
-  %p Core?: #{this_challenge.required}git
-  %p Level: #{this_challenge.level}
-  %p Created: #{this_challenge.created_at}
+  %span Level: #{this_challenge.level}
+  %p Core?: #{this_challenge.required}
+  %span Created: #{this_challenge.created_at}
   %p Description:
   .description=this_challenge.description.html_safe

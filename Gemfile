@@ -26,6 +26,7 @@ group :test, :development do
   gem 'binding_of_caller'
   gem 'awesome_print'
   gem 'wirble'
+  gem 'quiet_assets'
 end
 
 # Gems used only for assets and not required
