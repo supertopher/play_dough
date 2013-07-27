@@ -1,0 +1,3 @@
+%h1 All Cohorts:
+- @cohorts.each do |cohort|
+  = link_to "#{cohort.name} #{cohort.year}", cohort_path(cohort)

@@ -4,6 +4,7 @@ PlayDough::Application.routes.draw do
   resources   :phases
   resources   :events
   resources   :challenges
+  resources   :cohorts
   devise_for  :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
