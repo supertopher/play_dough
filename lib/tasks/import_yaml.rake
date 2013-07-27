@@ -23,3 +23,11 @@ task :yaml => :environment do
 
 end
 
+task :dev_seed do
+  if File.exist?('challenges_2.psql')
+    exec 'psql play_dough_development < challenges_2.psql'
+    exec 'psql play_dough_test < challenges_2.psql'
+  else
+    raise "File challenges_2.psql missing from root.  Not on git, get a copy from Chris."
+  end
+end
