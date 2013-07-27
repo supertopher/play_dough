@@ -1,0 +1,10 @@
+%h1 Create Challenges! You're here now
+= form_for :challenge do
+  =text_field :challenge, :name, placeholder: "Name"
+  =text_field :challenge, :actor_id, placeholder: "Actor ID"
+  %div
+  =text_field :challenge, :challenge_unit_id, placeholder: "Unit ID"
+  =text_field :challenge, :level, placeholder: "Level"
+  %div=text_area  :challenge, :description, placeholder: "Challenge Text"
+  %div Required? #{check_box :challenges, :required}
+  %div=submit_tag

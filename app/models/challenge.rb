@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: challengess
+# Table name: challenges
 #
 #  id                :integer          not null, primary key
 #  actor_id          :integer
