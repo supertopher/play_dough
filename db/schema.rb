@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727000614) do
+ActiveRecord::Schema.define(:version => 20130727034148) do
 
-  create_table "assignments", :force => true do |t|
+  create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
     t.integer  "challenge_unit_id"
     t.boolean  "required"
