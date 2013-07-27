@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725214344) do
+ActiveRecord::Schema.define(:version => 20130727000614) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "actor_id"
+    t.integer  "challenge_unit_id"
+    t.boolean  "required"
+    t.integer  "level"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
