@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727221830) do
+ActiveRecord::Schema.define(:version => 20130727232710) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20130727221830) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "phase_id"
+    t.integer  "default_week"
+    t.integer  "default_day"
   end
 
   create_table "event_times", :force => true do |t|
