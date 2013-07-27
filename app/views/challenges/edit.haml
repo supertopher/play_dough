@@ -1,5 +1,5 @@
 %h1 Edit Challenges! You're here now
-= form_for :challenge, url: challenges_path do
+= form_for :challenge, url: {action: "update"} do
   =text_field :challenge, :name, value: @challenge.name
   =text_field :challenge, :actor_id, value: @challenge.actor_id
   %div
