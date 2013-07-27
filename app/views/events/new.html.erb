@@ -12,13 +12,17 @@
 
 
   <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
-        <%= phase_event_form.select :phase_id, options_for_select(@phases) %>
+        <% @phases.each do |phase_array| %>
+          <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
+          <br>
+        <% end %>
       <% end %>
 
 
-  <p><%# f.fields_for :event_time do |event_time|  %></p>
-    <%# render "event_times", :f => event_time %> 
-  <%# end %>
+  <p><%= f.fields_for :event_time do |event_time|  %></p>
+    <%= render "event_times", :f => event_time %> 
+
+  <% end %>
   <p><%= f.submit %></p>
 <% end %>
 

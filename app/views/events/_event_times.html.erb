@@ -11,49 +11,50 @@
 <tr>
   <th>Week 1</th>
 <td>
-  <%= link_to "Monday", "#", class: "day_links" %>
-  <%= link_to "Tuesday", "#", class: "day_links" %>
-  <%= link_to "Wednesday", "#", class: "day_links" %>
-  <%= link_to "Thursday", "#", class: "day_links" %>
-  <%= link_to "Friday", "#", class: "day_links" %>
-  <%= link_to "Saturday", "#", class: "day_links" %>
-  <%= link_to "Sunday", "#", class: "day_links" %>
+  <%= check_box "event_day", "1" %> Monday
+  <%= check_box "event_day", "2" %> Tuesday
+  <%= check_box "event_day", "3" %> Wednesday
+  <%= check_box "event_day", "4" %> Thursday
+  <%= check_box "event_day", "5" %> Friday
+  <%= check_box "event_day", "6" %> Saturday
+  <%= check_box "event_day", "7" %> Sunday
 </td>
 </tr>
 <tr>
   <th>Week 2</th>
 <td>
-  <%= link_to "Monday", "#", class: "day_links" %>
-  <%= link_to "Tuesday", "#", class: "day_links" %>
-  <%= link_to "Wednesday", "#", class: "day_links" %>
-  <%= link_to "Thursday", "#", class: "day_links" %>
-  <%= link_to "Friday", "#", class: "day_links" %>
-  <%= link_to "Saturday", "#", class: "day_links" %>
-  <%= link_to "Sunday", "#", class: "day_links" %>
+  <%= check_box "event_day", "1" %> Monday
+  <%= check_box "event_day", "2" %> Tuesday
+  <%= check_box "event_day", "3" %> Wednesday
+  <%= check_box "event_day", "4" %> Thursday
+  <%= check_box "event_day", "5" %> Friday
+  <%= check_box "event_day", "6" %> Saturday
+  <%= check_box "event_day", "7" %> Sunday
 </td>
 </tr>
   <th>Week 3</th>
 <td>
-  <%= link_to "Monday", "#", class: "day_links" %>
-  <%= link_to "Tuesday", "#", class: "day_links" %>
-  <%= link_to "Wednesday", "#", class: "day_links" %>
-  <%= link_to "Thursday", "#", class: "day_links" %>
-  <%= link_to "Friday", "#", class: "day_links" %>
-  <%= link_to "Saturday", "#", class: "day_links" %>
-  <%= link_to "Sunday", "#", class: "day_links" %>
+  <%= check_box "event_day", "1" %> Monday
+  <%= check_box "event_day", "2" %> Tuesday
+  <%= check_box "event_day", "3" %> Wednesday
+  <%= check_box "event_day", "4" %> Thursday
+  <%= check_box "event_day", "5" %> Friday
+  <%= check_box "event_day", "6" %> Saturday
+  <%= check_box "event_day", "7" %> Sunday
 </td>
 </tr>
 </table>
 
 <p>Start Time</p>
 
-
+<%= text_field(:event_time, :start_hour, size: 5) %>:
+<%= text_field(:event_time, :start_minute, size: 8) %>
 
 <%# time_select 'event_time', 'lovestart_event_time', {:ampm => true} %>
 
 <p>End Time</p>
+<%= text_field(:event_time, :end_hour, size: 5) %>:
+<%= text_field(:event_time, :end_minute, size: 8) %>
 
-<div class="datetimeinput">
-</div> 
 <%# time_select 'event_time', 'loveend_event_time', {:ampm => true} %>
 

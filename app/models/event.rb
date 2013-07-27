@@ -12,7 +12,7 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :title, :description, :url, :phase_events, :phase_events_attributes
+  attr_accessible :title, :description, :url, :phase_events_attributes
   # accepts_nested_attributes_for :event_times
   has_many :phase_events  
   has_many :phases, :through => :phase_events
