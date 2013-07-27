@@ -17,9 +17,18 @@ task :yaml => :environment do
         level:              attribute_hash["level"],
         name:               attribute_hash["name"],
         description:        attribute_hash["description"],
+        created_at:         attribute_hash["created_at"]
         )
   end
 
 
 end
 
+task :dev_seed do
+  if File.exist?('challenges_2.psql')
+    exec 'psql play_dough_development < challenges_2.psql'
+    exec 'psql play_dough_test < challenges_2.psql'
+  else
+    raise "File challenges_2.psql missing from root.  Not on git, get a copy from Chris."
+  end
+end

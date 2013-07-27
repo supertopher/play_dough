@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: assignments
+# Table name: challenges
 #
 #  id                :integer          not null, primary key
 #  actor_id          :integer
@@ -13,6 +13,6 @@
 #  updated_at        :datetime         not null
 #
 
-class Assignment < ActiveRecord::Base
+class Challenge < ActiveRecord::Base
   attr_accessible :actor_id, :challenge_unit_id, :description, :level, :name, :required
 end

@@ -33,8 +33,7 @@ class EventsController < ApplicationController
     end_time = Time.parse("#{event_times[:end_hour]}:#{event_times[:end_minute]}")
     
     week = params[:event_day]
-puts "7" * 90
-    p week
+
     event_day = params[:event_day]
     EventTime.create(start_time: start_time, end_time: end_time, week: week, day: event_day )
   	redirect_to root_path
@@ -53,6 +52,7 @@ puts "7" * 90
   end
 
 end
+
 
 # Table name: event_times
 #

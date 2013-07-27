@@ -46,6 +46,7 @@
 </table>
 
 <p>Start Time</p>
+    <%# select_time(Time.now)  %>
 
 <%= text_field(:event_time, :start_hour, size: 5) %>:
 <%= text_field(:event_time, :start_minute, size: 8) %>
@@ -53,8 +54,13 @@
 <%# time_select 'event_time', 'lovestart_event_time', {:ampm => true} %>
 
 <p>End Time</p>
+
 <%= text_field(:event_time, :end_hour, size: 5) %>:
 <%= text_field(:event_time, :end_minute, size: 8) %>
+
+
+    <%# select_time(Time.now)  %>
+
 
 <%# time_select 'event_time', 'loveend_event_time', {:ampm => true} %>
 

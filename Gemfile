@@ -25,7 +25,8 @@ group :test, :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
-  gem 'psych'
+  gem 'wirble'
+  gem 'quiet_assets'
 end
 
 # Gems used only for assets and not required
