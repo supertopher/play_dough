@@ -29,8 +29,10 @@ class ChallengesController < ApplicationController
     redirect_to challenge_path(params[:id])
   end
 
-  def delete
-
+  def destroy
+    @challenge = Challenge.find(params[:id])
+    @challenge.destroy
+    redirect_to challenges_path
   end
 
 end
