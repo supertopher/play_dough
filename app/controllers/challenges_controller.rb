@@ -20,7 +20,7 @@ class ChallengesController < ApplicationController
   end
 
   def edit
-
+    @challenge = Challenge.find(params[:id])
   end
 
   def update

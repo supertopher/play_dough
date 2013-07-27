@@ -1,0 +1,10 @@
+%h1 Edit Challenges! You're here now
+= form_for :challenge, url: challenges_path do
+  =text_field :challenge, :name, value: @challenge.name
+  =text_field :challenge, :actor_id, value: @challenge.actor_id
+  %div
+  =text_field :challenge, :challenge_unit_id, value: @challenge.challenge_unit_id
+  =text_field :challenge, :level, value: @challenge.level
+  %div=text_area  :challenge, :description, value: @challenge.description
+  %div Required? #{check_box :challenge, :required, checked_value: @challenge.required}
+  %div=submit_tag
