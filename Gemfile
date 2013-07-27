@@ -27,6 +27,8 @@ group :test, :development do
   gem 'awesome_print'
   gem 'wirble'
   gem 'quiet_assets'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required
