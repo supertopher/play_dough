@@ -17,6 +17,7 @@ task :yaml => :environment do
         level:              attribute_hash["level"],
         name:               attribute_hash["name"],
         description:        attribute_hash["description"],
+        created_at:         attribute_hash["created_at"]
         )
   end
 

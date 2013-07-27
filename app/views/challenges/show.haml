@@ -1,0 +1,8 @@
+%h1 This is the challenges show page
+%h2 Title: #{@challenge.name}
+%p Actor ID: #{@challenge.actor_id}
+%p Core?: #{@challenge.required}
+%p Level: #{@challenge.level}
+%p Created: #{@challenge.created_at}
+%p Description:
+.description=@challenge.description.html_safe

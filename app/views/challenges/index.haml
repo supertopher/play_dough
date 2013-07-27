@@ -1,0 +1,9 @@
+%h1 Index of Challenges
+=@challenge_list.each do |this_challenge|
+  %h2 Title: #{this_challenge.name}
+  %p Actor ID: #{this_challenge.actor_id}
+  %p Core?: #{this_challenge.required}
+  %p Level: #{this_challenge.level}
+  %p Created: #{this_challenge.created_at}
+  %p Description:
+  .description=this_challenge.description.html_safe

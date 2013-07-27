@@ -1,7 +1,7 @@
 class ChallengesController < ApplicationController
 
-  def list
-
+  def index
+    @challenge_list = Challenge.limit(20).order('id desc')
   end
 
   def show
@@ -14,6 +14,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
+    pp params
     @challenge = Challenge.create(params[:challenge])
     redirect_to root_path
   end
