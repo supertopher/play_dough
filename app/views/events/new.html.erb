@@ -1,0 +1,25 @@
+<h2>Create An Event</h2>
+
+
+<h3>Your New Survey </h3>
+<%= form_for @event do |f| %>
+  <p><%= f.label :event %></p>
+
+  <p>Title: <%= f.text_field :title, :placeholder => "Enter your title here.."  %></p>
+  <p>Description: <%= f.text_field :description, :placeholder => "Enter your description here.."  %></p>
+   <p>Url: <%= f.text_field :url, :placeholder => "Enter your url here.."  %></p>
+  
+
+
+  <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
+        <%= phase_event_form.select :phase_id, options_for_select(@phases) %>
+      <% end %>
+
+
+  <p><%# f.fields_for :event_time do |event_time|  %></p>
+    <%# render "event_times", :f => event_time %> 
+  <%# end %>
+  <p><%= f.submit %></p>
+<% end %>
+
+
