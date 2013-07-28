@@ -77,15 +77,35 @@
   -webkit-border-bottom-right-radius:20px;
   border-bottom-left-radius:20px;
   border-bottom-right-radius:20px;
-  padding: 0.5em;
+  padding: 0 0.5em 0.5em 0.5em;
   float: right;
-  margin-top: -2em;
+  margin-top: 0em;
   margin-right: -7%;
   background-color: black;
   a{
     text-decoration: none;
     color: #999999;
   }
+}
+
+#challenge_index{
+  float: left;
+  width: 65%;
+}
+
+#challenge_heads_up{
+  padding: 0.5em;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+#right_nav{
+  margin-top: 3em;
+  float: right;
+  width: 30%;
+    img{
+      width: 40%;
+    }
 }
 
 .day_links:hover {
@@ -102,15 +122,7 @@
   }
 }
 
-
-
-.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
-.ui-timepicker-div dl { text-align: left; }
-.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
-.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
-.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
-
-.ui-timepicker-rtl{ direction: rtl; }
-.ui-timepicker-rtl dl { text-align: right; }
-.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+// footer {
+//   clear:both;
+//   background:#cc9;
+// }
