@@ -6,7 +6,7 @@
   <p><%= link_to "Phase: #{phase.number} in #{phase.location}", phase_path(phase) %></p>
 <% end %>
 
-<h2>Today's Wide Events This Week</h2>
+<h2>Today's Events This Week</h2>
 
 <% @todays_events.each do |event| %>
   <p>Title: <%= event.title %></p>
@@ -17,7 +17,12 @@
     <p>End Time: <%= time_event.end_time %></p>
     <p>Day: <%= time_event.day %></p>
     <p>Week: <%= time_event.week %></p>
+    <p>Phase: <%= time_event.week %></p>
   <% end %>
+  <% event.phases.each do |phase| %>
+  Phase: <%= phase.number %>
+  Location: <%= phase.location %>
+<% end %>
 <% end %>
 
 
