@@ -8,8 +8,23 @@ class HomeController < ApplicationController
   			@all_phases << event
   		end
   	end
-  	@all_phases
+    @all_events = Event.all
+    @todays_events = []
+  	@all_events.each do |event|
+      if event.start === Date.today
+        @todays_events << event
+      end
+    end
     @phases = Phase.all
+    @active_phases = []
+    @phases.each do |phase|
+      if phase.start < Date.today
+        @active_phases << phase
+      end
+    end
+    @all_phases
+    @todays_events
+    @active_phases
   end
 
   def show

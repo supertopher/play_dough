@@ -1,6 +1,13 @@
 class PhasesController < ApplicationController
   def index
-    @phases = Phase.all
+    phases = Phase.all
+    @active_phase = []
+    phase.each do |phase|
+      if phase.start < Date.today
+        @active_phase << phase
+      end
+    end
+    @active_phase
   end
 
   def new
@@ -20,5 +27,15 @@ class PhasesController < ApplicationController
 
   def show
     @phase = Phase.find(params[:id])
+    
+    #call method that evaluates if phase has started
+  end
+
+  def phase_active(phase)
+    if phase.start < Date.today
+      return true
+    else
+      return false
+    end
   end
 end
