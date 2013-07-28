@@ -5,6 +5,9 @@
   %div
   =text_field :challenge, :challenge_unit_id, placeholder: "Unit ID"
   =text_field :challenge, :level, placeholder: "Level"
+  %div
+  =text_field :challenge, :default_week, placeholder: "Default Week"
+  =text_field :challenge, :default_day, placeholder: "Default Day"
   %div=text_area  :challenge, :description, placeholder: "Challenge Text"
   %div Required? #{check_box :challenge, :required}
   %div=submit_tag

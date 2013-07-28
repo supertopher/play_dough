@@ -14,6 +14,7 @@ require 'spec_helper'
 
 describe Phase do
   it { should have_many(:phase_events)}
+  it { should have_many(:challenges)}
   it { should have_many(:events).through(:phase_events)}
   it { should have_many(:events).through(:phase_events)}
 end

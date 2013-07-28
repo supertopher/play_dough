@@ -1,5 +1,3 @@
-# require 'psych'
-
 task :yaml => :environment do
   require 'yaml'
   class Challenge
