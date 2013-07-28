@@ -3,23 +3,30 @@
   <%= f.text_field :title, :value => @event.title %><br/>
   <%= f.label :description %><br/>
   <%= f.text_area :description, :value => @event.description %><br />
-  <% @event.event_times.each do |event_time| %>
-    <%# event.each do |event_time| %>
-	  <%= f.label :week %><br/>
-	  <%= f.text_field :week, :value => event_time.week %><br/>
-	  <%= f.label :day %><br/>
-	  <%= f.text_field :day, :value => event_time.day %><br />
-	  <%= f.label :start_time %><br/>
-	  <%= f.text_field :start_time, :value => event_time.start_time %><br />
-	  <%= f.label :end_time %><br/>
-	  <%= f.text_field :end_time, :value => event_time.end_time %><br />
+
+ <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
+        <% @phases.each do |phase_array| %>
+          <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
+          <br>
+        <% end %>
+      <% end %>
+
+<h3>Current Phases Assigned to Event</h3>
+<% @event.phases.all.each do |phase|  %>
+ <%= f.label :number %><br/>
+  <%= f.text_field :number, :value => phase.number %><br/>
+  <%= f.label :location %><br/>
+  <%= f.text_field :location, :value => phase.location %><br/>
+<% end %>
+
+
+<p><%= f.fields_for :event_time do |event_time|  %></p>
+    <%= render "event_times_edit", :f => event_time %>
+
   <% end %>
-     <% @event.phases.each do |phase| %>
-     <%= f.label :number %>
-     <%= f.text_field :number, :value => phase.number %>
-     <%= f.label :location %>
-     <%= f.text_field :location, :value => phase.location %>
-  <% end %>
+
+
+    
   <%= f.submit %>
 <% end %>
 

@@ -5,12 +5,9 @@
 	<p><%= f.label :end_time %></p>
 	<p><%= f.text_field :end_time,  :value => event.end_time %><p/>
 <h2>Days Of The Event</h2>		
-	<p><%= f.label :week %><br/>
-	<p><%= f.text_field :week,  :value => event.week %><p/>
+	<p><%= f.label :week %> <br/>
+	<p><%= f.text_field :week, :value => event.week %><p/>
 	<p><%= f.label :day %><br/>
-	<p><%= f.text_field :day,  :value => event.day %><p/>
+	<p><%= f.text_field :day, :value => event.day %><p/>
 <% end %> 
 
-<!-- put into this format. create a method to parse hour and minute -->
-<%# text_field(:event_time, :end_hour, size: 5) %>:
-	<%# text_field(:event_time, :end_minute, size: 8) %>

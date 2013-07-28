@@ -63,15 +63,22 @@ class EventsController < ApplicationController
 end
 
   def edit
-    @event = Event.find(params[:id])   
+    @event = Event.find(params[:id])
+    @event.phase_events.build
+    @event.event_times.build
+    @current_phases = @event.phases.all
+    @phases = Phase.all
+    @phases.map! {|phase| ["phase #{phase.number} in #{phase.location}", phase.id] }   
   end
 
 def update
-  
+  ap params
 end
 
 def delete
-
+   event = Event.find(params[:id])
+   event.destroy
+    redirect_to root_path
 end
 
 end
