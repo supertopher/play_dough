@@ -9,6 +9,7 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
+    # markdown to HTML
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
       :autolink => true, :space_after_headers => true,
       :fenced_code_blocks => true)
