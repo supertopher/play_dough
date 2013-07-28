@@ -16,6 +16,9 @@ gem 'rails_admin'
 # Use debugger
 gem 'debugger'
 
+# markdown parsing
+gem 'redcarpet'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
