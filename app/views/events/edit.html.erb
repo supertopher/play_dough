@@ -4,29 +4,24 @@
   <%= f.label :description %><br/>
   <%= f.text_area :description, :value => @event.description %><br />
 
- <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
-        <% @phases.each do |phase_array| %>
-          <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
-          <br>
-        <% end %>
-      <% end %>
-
-<h3>Current Phases Assigned to Event</h3>
-<% @event.phases.all.each do |phase|  %>
- <%= f.label :number %><br/>
-  <%= f.text_field :number, :value => phase.number %><br/>
-  <%= f.label :location %><br/>
-  <%= f.text_field :location, :value => phase.location %><br/>
-<% end %>
 
 
 <p><%= f.fields_for :event_time do |event_time|  %></p>
-    <%= render "event_times_edit", :f => event_time %>
+  <%= render "event_times_edit", :f => event_time %>
+<% end %>
 
-  <% end %>
 
+<p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
+  <% @phases.each do |phase_array| %>
+    <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
+    <br>
+    <% end %>
+<% end %>
 
-    
+<p><%= f.fields_for :phases do |phases|  %></p>
+  <%= render "phases", :f => phases %>
+    <% end %>
+
   <%= f.submit %>
 <% end %>
 

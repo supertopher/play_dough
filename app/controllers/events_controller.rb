@@ -46,8 +46,6 @@ class EventsController < ApplicationController
                         week: "2", day: day)
     end
   end
-
- 
   params[:week_3].each do |day, choosen_day|
     if choosen_day == '1'
        EventTime.create(event_id: @event.id, 
@@ -56,9 +54,6 @@ class EventsController < ApplicationController
                         week: "3", day: day)
     end
   end
-
-  
-  
   redirect_to root_path
 end
 
@@ -66,62 +61,23 @@ end
     @event = Event.find(params[:id])
     @event.phase_events.build
     @event.event_times.build
-    @current_phases = @event.phases.all
+    @event.phases.build
     @phases = Phase.all
     @phases.map! {|phase| ["phase #{phase.number} in #{phase.location}", phase.id] }   
   end
 
-def update
-  ap params
-end
+  def update
+    ap params
+    puts "love" * 80
+    event = Event.find(params[:id])
+    event.update_attributes(params[:event])
+    ap params
+  end
 
-def delete
+  def delete
    event = Event.find(params[:id])
    event.destroy
     redirect_to root_path
-end
+  end
 
 end
-
-# every event_time (ex: week1 monday, is its own object and referecnes to event id)
-
-# Table name: event_times
-#
-#  id         :integer          not null, primary key
-#  event_id   :integer
-#  week       :integer
-#  day        :integer
-#  start_time :time
-#  end_time   :time
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
- # "week_1" => {
- #        "1" => "1",
- #        "2" => "0",
- #        "3" => "1",
- #        "4" => "0",
- #        "5" => "0",
- #        "6" => "0",
- #        "7" => "0"
- #    },
- #       "week_2" => {
- #        "1" => "1",
- #        "2" => "1",
- #        "3" => "0",
- #        "4" => "0",
- #        "5" => "0",
- #        "6" => "0",
- #        "7" => "0"
- #    },
- #                "week_3" => {
- #        "1" => "0",
- #        "2" => "1",
- #        "3" => "0",
- #        "4" => "0",
- #        "5" => "0",
- #        "6" => "0",
- #        "7" => "0"
- #    },
-

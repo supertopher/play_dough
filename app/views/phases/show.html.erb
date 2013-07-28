@@ -1,15 +1,15 @@
+<h4> Events </h4>
 <% @phase.events.each do |event| %>
-  <p>title:<%=  event.title %></p>
-  <p>url:<%= event.url %></p>
-  <p>description:<%= event.  description %></p>
+  <p>title: <%=  event.title %></p>
+  <p>url: <%= event.url %></p>
+  <p>description: <%= event.  description %></p>
   <p>EventTimes:<% event.event_times.each do |event_time| %></p>
-	<p>Week:<%= event_time.week %></p>
-	<p>Day:<%= event_time.day %></p>
-	<p>Start Time:<%= event_time.start_time %></p>
-	<p>End Time:<%= event_time.end_time %></p>
-    
+  	<p>Week:<%= event_time.week %></p>
+  	<p>Day:<%= event_time.day %></p>
+  	<p>Start Time:<%= event_time.start_time %></p>
+  	<p>End Time:<%= event_time.end_time %></p>
   <% end %>
-  <%# button_tag "Edit Event", data: { event.id} %>
+  <h5>Modify the Events</h5>
   <h4>Edit this Event: <%= link_to event.id, edit_event_path %></h4>
   <h4>Delete this Event: </h4>
 <% end %>
