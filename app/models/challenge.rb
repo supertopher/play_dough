@@ -11,6 +11,9 @@
 #  description       :text
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  phase_id          :integer
+#  default_week      :integer
+#  default_day       :integer
 #
 
 class Challenge < ActiveRecord::Base
