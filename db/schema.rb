@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20130727034148) do
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.integer  "week"
-    t.integer  "day"
+    t.text     "week"
+    t.text     "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
