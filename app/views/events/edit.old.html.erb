@@ -1,0 +1,51 @@
+<%= form_for @event do |f| %>
+ <p><%= f.label :event %></p>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title, :value => @event.title %><br/>
+  <%= f.label :description %><br/>
+  <%= f.text_area :description, :value => @event.description %><br />
+ 
+  <% @event.event_times.each do |event_time| %>
+ 
+    <%# event.each do |event_time| %>
+	  <%= f.label :week %><br/>
+	  <%= f.text_field :week, :value => event_time.week %><br/>
+	  <%= f.label :day %><br/>
+	  <%= f.text_field :day, :value => event_time.day %><br />
+	  <%= f.label :start_time %><br/>
+	  <%= f.text_field :start_time, :value => event_time.start_time %><br />
+	  <%= f.label :end_time %><br/>
+	  <%= f.text_field :end_time, :value => event_time.end_time %><br />
+  <% end %>
+     <% @event.phases.each do |phase| %>
+    
+     <%= f.label :number %>
+     <%= f.text_field :number, :value => phase.number %>
+     <%= f.label :location %>
+     <%= f.text_field :location, :value => phase.location %>
+<% end %>
+  <%= f.submit %>
+<% end %>
+
+
+             <!--   "utf8" => "✓",
+               "_method" => "put",
+    "authenticity_token" => "Y0RFnE2YnWFg1y32FftC1Tkb+4F2Q6rPSnOT6Gw6SvI=",
+                 "event" => {
+              "title" => "Phase  1 Event Love",
+        "description" => "Every Monday from 3 -4 - love",
+               "week" => "3 - love",
+                "day" => "Monday - love",
+         "start_time" => "2000-01-01 10:00:00 UTC",
+           "end_time" => "2000-01-01 11:00:00 UTC",
+             "number" => "12",
+           "location" => "sflove"
+    },
+                "commit" => "Update Event",
+                "action" => "update",
+            "controller" => "events",
+                    "id" => "1"
+}
+
+
+ -->
