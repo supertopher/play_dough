@@ -21,7 +21,7 @@ class ChallengesController < ApplicationController
   def create
     pp params
     @challenge = Challenge.create(params[:challenge])
-    redirect_to root_path
+    redirect_to challenge_path(@challenge)
   end
 
   def edit
