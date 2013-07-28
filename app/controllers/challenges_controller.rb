@@ -2,6 +2,8 @@ class ChallengesController < ApplicationController
 
   def index
     @challenge_list = Challenge.limit(20).order('id desc')
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      :autolink => true, :space_after_headers => true)
   end
 
   def show
