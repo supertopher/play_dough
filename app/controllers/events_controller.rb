@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
-  def list
-
+  def index
+    @events = Event.all
   end
 
   def show
@@ -20,45 +20,24 @@ class EventsController < ApplicationController
     @event = Event.create(params[:event])
     params[:phase_event].each do |phase, value|
       if value == '1'
-       phase_event = PhaseEvent.create(phase_id: phase, event_id: @event.id)
-     end
-   end
-
-   event_times = params[:event_time]
-   start_time = Time.parse("#{event_times[:start_hour]}:#{event_times[:start_minute]}")
-   end_time = Time.parse("#{event_times[:end_hour]}:#{event_times[:end_minute]}")
-
-   
-   params[:week_1].each do |day, choosen_day|
-    if choosen_day == '1'
-      EventTime.create(event_id: @event.id, 
-                        start_time: start_time, 
-                        end_time: end_time, 
-                        week: "1", day: day)
+        phase_event = PhaseEvent.create(phase_id: phase, event_id: @event.id)
+      end
     end
-  end
 
-  params[:week_2].each do |day, choosen_day|
-    if choosen_day == '1'
-      EventTime.create(event_id: @event.id, 
-                        start_time: start_time, 
-                        end_time: end_time, 
-                        week: "2", day: day)
+    event_times = params[:event_time]
+    start_time = Time.parse("#{event_times[:start_hour]}:#{event_times[:start_minute]}")
+    end_time = Time.parse("#{event_times[:end_hour]}:#{event_times[:end_minute]}")
+    debugger
+
+    params[:week].each do |week_and_day, status|
+      if status == '1'
+        EventTime.create(event_id: @event.id,
+                          start_time: start_time,
+                          end_time: end_time,
+                          week: week_and_day.first, day: week_and_day.last)
+      end
     end
-  end
 
- 
-  params[:week_3].each do |day, choosen_day|
-    if choosen_day == '1'
-       EventTime.create(event_id: @event.id, 
-                        start_time: start_time, 
-                        end_time: end_time, 
-                        week: "3", day: day)
-    end
-  end
-
-  
-  
   redirect_to root_path
 end
 
