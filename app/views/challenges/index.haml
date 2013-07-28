@@ -7,4 +7,4 @@
   %p Core?: #{this_challenge.required}
   %span Created: #{this_challenge.created_at}
   %p Description:
-  .description=this_challenge.description.html_safe
+  .description=@markdown.render(this_challenge.description).html_safe

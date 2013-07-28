@@ -1,7 +1,6 @@
-<h2>Create An Event</h2>
+<h2>Add an Event to the Boot Callender</h2>
 
 
-<h3>Your New Survey </h3>
 <%= form_for @event do |f| %>
   <p><%= f.label :event %></p>
 
@@ -10,15 +9,23 @@
    <p>Url: <%= f.text_field :url, :placeholder => "Reddit.com"  %></p>
 
 
-
   <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
-        <%= phase_event_form.select :phase_id, options_for_select(@phases) %>
+        <% @phases.each do |phase_array| %>
+          <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
+          <br>
+        <% end %>
       <% end %>
 
+
+  <p><%= f.fields_for :event_time do |event_time|  %></p>
+    <%= render "event_times", :f => event_time %>
+
+  <% end %>
 
   <p><%# f.fields_for :event_time do |event_time|  %></p>
     <%# render "event_times", :f => event_time %>
   <%# end %>
+
   <p><%= f.submit %></p>
 <% end %>
 

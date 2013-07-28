@@ -163,6 +163,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     remotipart (1.2.1)
     rspec-core (2.14.3)
     rspec-expectations (2.14.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.13)
   rails_admin
+  redcarpet
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda-matchers
