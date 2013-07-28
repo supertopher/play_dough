@@ -6,6 +6,7 @@
   %h2=link_to this_challenge.name, challenge_path(this_challenge)
   %p Core?: #{this_challenge.required}
   %p Level: #{this_challenge.level}
+  %p Day of Week: #{this_challenge.default_day}
   %span Created: #{time_ago_in_words(this_challenge.created_at)} ago.
   -unless this_challenge.created_at == this_challenge.updated_at
     %span Last Updated: #{time_ago_in_words(this_challenge.updated_at)} ago.
