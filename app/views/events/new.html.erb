@@ -10,7 +10,6 @@
    <p>Url: <%= f.text_field :url, :placeholder => "Reddit.com"  %></p>
 
 
-
   <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
         <% @phases.each do |phase_array| %>
           <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
