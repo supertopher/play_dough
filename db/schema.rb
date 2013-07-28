@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
+    t.date     "start"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"

@@ -5,8 +5,9 @@
   <p><%= f.label :event %></p>
 
   <p>Title: <%= f.text_field :title, :placeholder => "Engineering Empathy"  %></p>
-  <p>Description: <%= f.text_field :description, :placeholder => "Learn Why your superego Hates you."  %></p>
-   <p>Url: <%= f.text_field :url, :placeholder => "Reddit.com"  %></p>
+  <p>Description: </p>
+    <p><%= f.text_area :description, :placeholder => "Learn Why your superego Hates you."  %></p>
+   <p>URL: <%= f.text_field :url, :placeholder => "Reddit.com"  %></p>
 
 
   <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
