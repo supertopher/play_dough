@@ -2,11 +2,12 @@
 #
 # Table name: phases
 #
-#  id         :integer          not null, primary key
-#  number     :integer
-#  location   :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  number       :integer
+#  location     :string(255)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  challenge_id :integer
 #
 
 class Phase < ActiveRecord::Base

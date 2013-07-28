@@ -16,6 +16,9 @@ gem 'rails_admin'
 # Use debugger
 gem 'debugger'
 
+# markdown parsing
+gem 'redcarpet'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
@@ -27,6 +30,8 @@ group :test, :development do
   gem 'awesome_print'
   gem 'wirble'
   gem 'quiet_assets'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required

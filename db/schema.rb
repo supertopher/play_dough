@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727034148) do
+ActiveRecord::Schema.define(:version => 20130727232710) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20130727034148) do
     t.text     "description"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "phase_id"
+    t.integer  "default_week"
+    t.integer  "default_day"
   end
 
   create_table "event_times", :force => true do |t|
@@ -52,8 +55,9 @@ ActiveRecord::Schema.define(:version => 20130727034148) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "challenge_id"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
