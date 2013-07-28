@@ -1,7 +1,9 @@
+.challenge_nav
+  =link_to "Create a New Challenge", new_challenge_path
+
 %h1 Index of Challenges
-.create_challenge_link=link_to "Create a new Challenge", new_challenge_path
 =@challenge_list.each do |this_challenge|
-  %h2 Title: #{link_to this_challenge.name, challenge_path(this_challenge)}
+  %h2=link_to this_challenge.name, challenge_path(this_challenge)
   %p Actor ID: #{this_challenge.actor_id}
   %span Level: #{this_challenge.level}
   %p Core?: #{this_challenge.required}
