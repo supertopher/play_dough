@@ -8,4 +8,6 @@
   %div=text_area  :challenge, :description, value: @challenge.description
   %div Required? #{check_box :challenge, :required, checked_value: @challenge.required}
   %div=submit_tag
+.destroy_link=link_to "Delete This Challenge", challenge_path(@challenge), :confirm => "are you sure?", :method => :delete
+
 .link_back=link_to "Back to Challenges Home", challenges_path

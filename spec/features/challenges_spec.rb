@@ -17,7 +17,7 @@ describe "challenges" do
 
     it "should take a user to new challenge path upon link click" do
       visit challenges_path
-      click_link 'Create a new Challenge'
+      click_link 'Create a New Challenge'
       current_path.should == new_challenge_path
     end
 

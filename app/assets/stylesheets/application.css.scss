@@ -33,6 +33,15 @@
     float: right;
     margin: 0.5em 5% auto auto;
     display: inline-block;
+    a{
+      color: #999999;
+    }
+  }
+
+  .challenge_comment_area{
+    width: 40%;
+    display: block;
+    float: right;
   }
 
   .lost_password{
@@ -57,9 +66,27 @@
   width: 80%;
 }
 
-// *{
-//   border: red 1px solid;
-// }
+.this_challenge{
+  width: 55%;
+}
+
+.challenge_nav{
+  -moz-border-radius-bottomleft:20px;
+  -moz-border-radius-bottomright:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  border-bottom-left-radius:20px;
+  border-bottom-right-radius:20px;
+  padding: 0.5em;
+  float: right;
+  margin-top: -2em;
+  margin-right: -7%;
+  background-color: black;
+  a{
+    text-decoration: none;
+    color: #999999;
+  }
+}
 
 .day_links:hover {
   color: white;
@@ -67,6 +94,12 @@
 
 .day_links {
   color: purple;
+}
+
+.destroy_link{
+  a{
+    color: red;
+  }
 }
 
 

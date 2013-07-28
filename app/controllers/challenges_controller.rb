@@ -2,10 +2,16 @@ class ChallengesController < ApplicationController
 
   def index
     @challenge_list = Challenge.limit(20).order('id desc')
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      :autolink => true, :space_after_headers => true,
+      :fenced_code_blocks => true)
   end
 
   def show
     @challenge = Challenge.find(params[:id])
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      :autolink => true, :space_after_headers => true,
+      :fenced_code_blocks => true)
   end
 
   def new
@@ -15,7 +21,7 @@ class ChallengesController < ApplicationController
   def create
     pp params
     @challenge = Challenge.create(params[:challenge])
-    redirect_to root_path
+    redirect_to challenge_path(@challenge)
   end
 
   def edit
@@ -29,8 +35,10 @@ class ChallengesController < ApplicationController
     redirect_to challenge_path(params[:id])
   end
 
-  def delete
-
+  def destroy
+    @challenge = Challenge.find(params[:id])
+    @challenge.destroy
+    redirect_to challenges_path
   end
 
 end

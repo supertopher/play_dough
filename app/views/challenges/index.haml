@@ -1,10 +1,13 @@
+.challenge_nav
+  =link_to "Create a New Challenge", new_challenge_path
+
 %h1 Index of Challenges
-.create_challenge_link=link_to "Create a new Challenge", new_challenge_path
-=@challenge_list.each do |this_challenge|
-  %h2 Title: #{link_to this_challenge.name, challenge_path(this_challenge)}
-  %p Actor ID: #{this_challenge.actor_id}
-  %span Level: #{this_challenge.level}
+-@challenge_list.each do |this_challenge|
+  %h2=link_to this_challenge.name, challenge_path(this_challenge)
   %p Core?: #{this_challenge.required}
-  %span Created: #{this_challenge.created_at}
+  %span Created: #{time_ago_in_words(this_challenge.created_at)} ago.
+  -unless this_challenge.created_at == this_challenge.updated_at
+    %span Last Updated: #{time_ago_in_words(this_challenge.updated_at)} ago.
   %p Description:
-  .description=this_challenge.description.html_safe
+  .description=@markdown.render(this_challenge.description).html_safe
+  %hr
