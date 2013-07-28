@@ -2,10 +2,11 @@
   =link_to "Create a New Challenge", new_challenge_path
 
 %h1 Index of Challenges
-=@challenge_list.each do |this_challenge|
+-@challenge_list.each do |this_challenge|
   %h2=link_to this_challenge.name, challenge_path(this_challenge)
   %p Core?: #{this_challenge.required}
-  %span Created: #{time_ago_in_words(this_challenge.created_at) thiu} ago
+  %span Created: #{time_ago_in_words(this_challenge.created_at)} ago.
+  %span Last Updated: #{time_ago_in_words(this_challenge.updated_at)} ago.
   %p Description:
   .description=@markdown.render(this_challenge.description).html_safe
   %hr
