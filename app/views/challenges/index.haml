@@ -4,9 +4,8 @@
 %h1 Index of Challenges
 =@challenge_list.each do |this_challenge|
   %h2=link_to this_challenge.name, challenge_path(this_challenge)
-  %p Actor ID: #{this_challenge.actor_id}
-  %span Level: #{this_challenge.level}
   %p Core?: #{this_challenge.required}
-  %span Created: #{this_challenge.created_at}
+  %span Created: #{time_ago_in_words(this_challenge.created_at) thiu} ago
   %p Description:
   .description=@markdown.render(this_challenge.description).html_safe
+  %hr
