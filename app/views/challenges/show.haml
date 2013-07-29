@@ -22,5 +22,5 @@
     Comments use github flavored markdown
     = form_for @comment do |f|
       = hidden_field_tag :challenge_id, @challenge.id
-      = f.text_area :body, cols: 80, rows: 3
+      = f.text_area :body, cols: 60, rows: 5
       = f.submit
