@@ -38,6 +38,9 @@ class Cohort < ActiveRecord::Base
   	(days_at_dbc % 7).to_i
   end
 
+ 
+
+
   has_many :cohort_events
   has_many :cohorts, through: :cohort_events
 

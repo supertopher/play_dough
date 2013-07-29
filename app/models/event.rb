@@ -24,5 +24,15 @@ class Event < ActiveRecord::Base
   # 	self.start_time
   has_many :cohort_events
   has_many :cohorts, through: :cohort_events
+  
+  def todays_events
+   @todays_events = []
+   @event = Event.all
+   @event.each do |event|
+     event.phases.each do
+       phase.start_time #call some method that says yes this is today
+       end
+    end 
+  end
 
 end
