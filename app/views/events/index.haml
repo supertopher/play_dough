@@ -1,0 +1,12 @@
+%h1 All Events:
+- @events.each do |event|
+  %h2.event_title= event.title
+  %h3.event_phase Phases:
+  - event.phases.each do |phase|
+    = "Phase #{phase.number} in #{phase.location}"
+  %h4.event_url= "Url: event.url"
+  %h4.event_description= "Description: event.description"
+  .event_times
+    - event.event_times.each do |event_time|
+      .event_date= "Week #{event_time.week} Day #{event_time.day}"
+      .event_time= "Starts at: #{event_time.start_time} Ends at: #{event_time.end_time}"

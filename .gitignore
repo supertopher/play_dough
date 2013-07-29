@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+challenges.yml
+challenges.psql
+challenges_2.psql

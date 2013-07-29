@@ -16,6 +16,9 @@ gem 'rails_admin'
 # Use debugger
 gem 'debugger'
 
+# markdown parsing
+gem 'redcarpet'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
@@ -25,6 +28,10 @@ group :test, :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
+  gem 'wirble'
+  gem 'quiet_assets'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required
@@ -40,6 +47,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

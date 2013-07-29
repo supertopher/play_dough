@@ -11,12 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725214344) do
+ActiveRecord::Schema.define(:version => 20130727232710) do
+
+  create_table "challenges", :force => true do |t|
+    t.integer  "actor_id"
+    t.integer  "challenge_unit_id"
+    t.boolean  "required"
+    t.integer  "level"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "phase_id"
+    t.integer  "default_week"
+    t.integer  "default_day"
+  end
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.integer  "week"
-    t.integer  "day"
+    t.text     "week"
+    t.text     "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
@@ -41,8 +55,10 @@ ActiveRecord::Schema.define(:version => 20130725214344) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.date     "start"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "challenge_id"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

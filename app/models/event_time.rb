@@ -13,6 +13,7 @@
 #
 
 class EventTime < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :week , :day, :start_time, :end_time, :event_id, :event_attributes
   belongs_to :event
+  accepts_nested_attributes_for :event
 end
