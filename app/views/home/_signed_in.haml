@@ -13,6 +13,9 @@
 .date= "Is it saturday? #{DateTime.now.saturday?}"
 
 %h2= "Current user: #{current_user.email}"
-%h2= "Current user's cohort: #{current_user.cohort.name}"
-%h2= "Current user's cohort start date: #{current_user.cohort.start_date}"
-%h2= "Current user's phase: #{current_user.cohort.phase.name}"
+-if current_user.cohort
+  %h2= "Current user's cohort: #{current_user.cohort.name}"
+  %h2= "Current user's cohort start date: #{current_user.cohort.start_date}"
+  %h2= "Current user's phase: #{current_user.cohort.phase.name}"
+-else
+  %h2 Please create a cohort (also staff don't have cohorts)
