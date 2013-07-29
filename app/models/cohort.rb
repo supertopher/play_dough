@@ -14,4 +14,6 @@ class Cohort < ActiveRecord::Base
   attr_accessible :name, :year, :start_date, :phase_id, :current_phase_day
   has_many :users
   belongs_to :phase
+  has_many :cohort_events
+  has_many :cohorts, through: :cohort_events
 end

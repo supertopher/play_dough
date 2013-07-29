@@ -23,6 +23,6 @@
 -else
   %h2 Please create a cohort (also staff don't have cohorts)
 
-# before save double-check the phase day
+/ before save double-check the phase day
 - if current_user.cohort
-- current_user.cohort.start_date
+  - current_user.cohort.start_date
