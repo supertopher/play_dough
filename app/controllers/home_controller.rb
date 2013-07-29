@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    #make these helper methods: todays_events, events_by_cohort, cohort_wide_events
   	@all_phases = []
   	phase_count = Phase.all.count
   	all_events = Event.all
@@ -8,9 +9,8 @@ class HomeController < ApplicationController
   			@all_phases << event
   		end
   	end
-    @all_events = Event.all
     @todays_events = []
-  	@all_events.each do |event|
+  	all_events.each do |event|
       if event.start === Date.today
         @todays_events << event
       end
