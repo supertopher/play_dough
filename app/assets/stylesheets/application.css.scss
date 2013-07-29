@@ -87,10 +87,50 @@
     color: #999999;
   }
 }
+.each_challenge_link{
 
+<<<<<<< Updated upstream
 #challenge_index{
   float: left;
   width: 65%;
+=======
+<<<<<<< Updated upstream
+=======
+}
+#challenge_index{
+  margin-top: 1em;
+  padding: 1.5em;
+  -moz-box-shadow:inset -3px 2px 6px #000000;
+  -webkit-box-shadow:inset -3px 2px 6px #000000;
+  box-shadow:inset -3px 2px 6px #000000;
+  float: left;
+  width: 60%;
+
+  h1{
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  :nth-child(even){
+    padding: 0.5em;
+    background-color: #F5F5F5;
+    a{
+      background-color: #F5F5F5;
+      color: black;
+      text-decoration: none;
+    }
+  }
+  :nth-child(odd){
+    padding: 0.5em;
+    background-color: white;
+    a{
+      background-color: white;
+
+      color: black;
+      text-decoration: none;
+    }
+  }
+>>>>>>> Stashed changes
 }
 
 #challenge_heads_up{
@@ -103,11 +143,20 @@
   margin-top: 3em;
   float: right;
   width: 30%;
+<<<<<<< Updated upstream
     img{
       width: 40%;
     }
 }
 
+=======
+  img{
+    width: 40%;
+  }
+}
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 .day_links:hover {
   color: white;
 }
