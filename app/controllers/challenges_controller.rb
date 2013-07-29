@@ -15,6 +15,10 @@ class ChallengesController < ApplicationController
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
       :autolink => true, :space_after_headers => true,
       :fenced_code_blocks => true)
+    @comment = Comment.new
+    @comment.challenge = @challenge
+    @comment.user = current_user
+    pp @comment
   end
 
   def new

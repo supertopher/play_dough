@@ -11,4 +11,16 @@
   .edit_link=link_to "Edit this Challenge", edit_challenge_path
   .link_back=link_to "Back to Challenges Home", challenges_path
 .challenge_comment_area
-  %h2 This is a placeholder for comment area
+  %h2 Discussion
+  .challenge_comments
+    -@challenge.comments.each do |this_comment|
+      .single_comment
+        =this_comment.body
+        .comment_email= this_comment.user.email
+        %hr
+  .new_comment_form
+    Comments use github flavored markdown
+    = form_for @comment do |f|
+      = hidden_field_tag :challenge_id, @challenge.id
+      = f.text_area :body, cols: 60, rows: 5
+      = f.submit
