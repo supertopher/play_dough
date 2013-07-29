@@ -121,15 +121,21 @@
       color: black;
       text-decoration: none;
     }
+    a:hover{
+      text-decoration: underline;
+    }
   }
   :nth-child(odd){
     padding: 0.5em;
     background-color: white;
+    text-decoration: underline;
     a{
       background-color: white;
-
       color: black;
       text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
     }
   }
 }
