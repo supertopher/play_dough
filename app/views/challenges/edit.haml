@@ -1,13 +1,17 @@
-%h1 Edit Challenges! You're here now
-= form_for @challenge do
-  =text_field :challenge, :name, value: @challenge.name
-  =text_field :challenge, :actor_id, value: @challenge.actor_id
-  %div
-  =text_field :challenge, :challenge_unit_id, value: @challenge.challenge_unit_id
-  =text_field :challenge, :level, value: @challenge.level
-  %div=text_area  :challenge, :description, value: @challenge.description
-  %div Required? #{check_box :challenge, :required, checked_value: @challenge.required}
-  %div=submit_tag
-.destroy_link=link_to "Delete This Challenge", challenge_path(@challenge), :confirm => "are you sure?", :method => :delete
+.this_challenge
+  %h1 Edit Challenges! You're here now
+  = form_for @challenge do
+    =text_field :challenge, :name, value: @challenge.name
+    =text_field :challenge, :actor_id, value: @challenge.actor_id
+    %div
+    =text_field :challenge, :challenge_unit_id, value: @challenge.challenge_unit_id
+    =text_field :challenge, :level, value: @challenge.level
+    %div=text_area  :challenge, :description, value: @challenge.description, class: "text_area"
+    %div Required? #{check_box :challenge, :required, checked_value: @challenge.required}
+    %div=submit_tag
+  .destroy_link=link_to "Delete This Challenge", challenge_path(@challenge), :confirm => "are you sure?", :method => :delete
 
-.link_back=link_to "Back to Challenges Home", challenges_path
+  .link_back=link_to "Back to Challenges Home", challenges_path
+
+.challenge_comment_area
+  .live_preview
