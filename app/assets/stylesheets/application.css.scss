@@ -116,6 +116,8 @@
   :nth-child(even){
     padding: 0.5em;
     background-color: #F5F5F5;
+    white-space: nowrap;
+    overflow: hidden;
     a{
       background-color: #F5F5F5;
       color: black;
@@ -128,7 +130,6 @@
   :nth-child(odd){
     padding: 0.5em;
     background-color: white;
-    text-decoration: underline;
     a{
       background-color: white;
       color: black;
@@ -138,6 +139,10 @@
       text-decoration: underline;
     }
   }
+}
+
+.each_challenge_link{
+  overflow: hidden;
 }
 
 #challenge_heads_up{
