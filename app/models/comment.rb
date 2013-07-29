@@ -11,7 +11,7 @@
 #  updated_at   :datetime         not null
 #
 
-class Comments < ActiveRecord::Base
+class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :challenge
   attr_accessible :body, :karma
