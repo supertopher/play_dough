@@ -27,5 +27,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :password_confirmation, :remember_me, :cohort_id, :staff
   belongs_to :cohort
+  has_many :comments
 
 end
