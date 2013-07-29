@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729014820) do
+ActiveRecord::Schema.define(:version => 20130729040418) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(:version => 20130729014820) do
     t.string  "start_date"
     t.integer "phase_id"
   end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.integer  "karma"
+    t.text     "body"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "comments", ["challenge_id"], :name => "index_comments_on_challenge_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
