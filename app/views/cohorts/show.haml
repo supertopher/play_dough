@@ -1,0 +1,6 @@
+%h1= "#{@cohort.name} #{@cohort.year}"
+= link_to "Create User", new_user_registration_path
+= link_to "Edit User", edit_user_registration_path
+- @cohort.users.each do |user|
+  = user.email
+

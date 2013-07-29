@@ -1,0 +1,5 @@
+%h1 All Cohorts:
+.new_cohort_link= link_to "Add new cohort", new_cohort_path
+%br
+- @cohorts.each do |cohort|
+  .cohort= link_to "#{cohort.name} #{cohort.year}", cohort_path(cohort)

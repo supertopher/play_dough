@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20130729004138) do
     t.integer  "default_day"
   end
 
+  create_table "cohorts", :force => true do |t|
+    t.string  "name"
+    t.string  "year"
+    t.string  "start_date"
+    t.integer "phase_id"
+  end
+
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
     t.integer  "week"
@@ -95,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20130729004138) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.boolean  "staff"
+    t.integer  "cohort_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
