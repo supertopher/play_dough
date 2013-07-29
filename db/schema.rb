@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.integer  "week"
-    t.integer  "day"
+    t.text     "week"
+    t.text     "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
+    t.date     "start"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"
@@ -115,8 +116,8 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.boolean  "staff"
     t.integer  "cohort_id"
+    t.boolean  "staff"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
