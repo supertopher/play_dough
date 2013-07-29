@@ -17,6 +17,31 @@
  body{
   margin: 0;
 }
+
+.intro_block{
+  display: block;
+  padding:1px;
+  border:1px solid #021a40;
+  background-color: $accent;
+  margin: 5em auto 5em auto;
+  width: 35%;
+  img{
+    display: inline-block;
+    width: 100%;
+  }
+  .plato_text_block{
+    width: 50%;
+    display: block;
+    background-color: white;
+    height: 4em;
+    // line-height: 7em;
+  }
+}
+
+// *{
+//   border: red 1px solid;
+// }
+
  nav{
   font-family: 'Lato', sans-serif;
   height: 2.5em;
@@ -100,9 +125,11 @@ box-shadow: -3px 2px 6px $accent;
     color: white;
   }
 }
+
 // .each_challenge_link{
 
 // }
+
 #challenge_index{
   margin-top: 1em;
   padding: 1.5em;
