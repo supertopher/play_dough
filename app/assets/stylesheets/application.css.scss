@@ -20,20 +20,26 @@
 
 .intro_block{
   display: block;
-  padding:1px;
-  border:1px solid #021a40;
-  background-color: $accent;
-  margin: 5em auto 5em auto;
-  width: 35%;
+  // padding:1px;
+  // border:1px solid #021a40;
+  // background-color: $accent;
+  margin: 3em auto 5em auto;
+  width: 55%;
   img{
-    display: inline-block;
-    width: 100%;
+    display: block;
+    margin: auto;
+    width: 80%;
   }
   .plato_text_block{
-    width: 50%;
+    font-family: cursive;
+    font-size: 1.2em;
+    padding: 0.5em;
+    text-align: center;
+    width: 85%;
     display: block;
+    margin: auto;
     background-color: white;
-    height: 4em;
+    height: em;
     // line-height: 7em;
   }
 }
