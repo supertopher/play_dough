@@ -14,7 +14,7 @@ class Cohort < ActiveRecord::Base
   end
 
   def days_at_dbc
-  	(Time.zone.now.to_date - self.start_date.to_date).to_i
+  	(Time.now.localtime.to_date - self.start_date.to_date).to_i
   end
   
   def week_at_dbc

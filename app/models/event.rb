@@ -18,5 +18,8 @@ class Event < ActiveRecord::Base
   has_many :phases, :through => :phase_events
   has_many :event_times
   accepts_nested_attributes_for :phase_events, :phases, :event_times
+  
 
+  # def parse_start_time
+  # 	self.start_time
 end

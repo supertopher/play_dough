@@ -17,6 +17,8 @@ class EventsController < ApplicationController
   end
 
   def create
+    p "love " * 90
+    ap params
     @event = Event.create(params[:event])
     params[:phase_event].each do |phase, value|
       if value == '1'
