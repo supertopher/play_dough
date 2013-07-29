@@ -13,6 +13,8 @@
 class Phase < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :phase_events
+  has_many :challenges
   has_many :events, :through => :phase_events
   attr_accessible :number, :location
+  accepts_nested_attributes_for :events
 end

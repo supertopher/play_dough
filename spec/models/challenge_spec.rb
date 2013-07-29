@@ -19,5 +19,5 @@
 require 'spec_helper'
 
 describe Challenge do
-
+  it { should belong_to(:phase) }
 end

@@ -1,0 +1,11 @@
+<h2> Create a phase</h2>
+
+<%= form_for @phase do |f| %>
+  <p><%= f.label :number, "Number" %></p>
+  <p><%= f.text_field :number, size: 3 %></p>
+  <p><%= f.label :location, "Location" %></p>
+  <p><%= f.text_field :location %></p>
+  <p><%= f.label :start, "Start Date"  %></p>
+  <p><%= f.date_select :start  %></p>
+  <p><%= f.submit "Submit", :disable_with => 'Submiting...' %></p>
+<% end %>

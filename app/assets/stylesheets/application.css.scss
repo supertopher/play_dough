@@ -13,7 +13,9 @@
  *= require_tree .
  */
 
-
+ body{
+  margin: 0;
+}
  nav{
   font-family: 'Lato', sans-serif;
   height: 2.5em;
@@ -33,6 +35,15 @@
     float: right;
     margin: 0.5em 5% auto auto;
     display: inline-block;
+    a{
+      color: #999999;
+    }
+  }
+
+  .challenge_comment_area{
+    width: 40%;
+    display: block;
+    float: right;
   }
 
   .lost_password{
@@ -50,6 +61,9 @@
     color:white;
     text-decoration: none;
   }
+  a:hover{
+    color: white;
+  }
 }
 
 .main{
@@ -57,9 +71,82 @@
   width: 80%;
 }
 
-// *{
-//   border: red 1px solid;
+.this_challenge{
+  width: 55%;
+}
+
+.challenge_nav{
+  -moz-border-radius-bottomleft:20px;
+  -moz-border-radius-bottomright:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  border-bottom-left-radius:20px;
+  border-bottom-right-radius:20px;
+  padding: 0 0.5em 0.5em 0.5em;
+  float: right;
+  margin-top: 0em;
+  margin-right: -7%;
+  background-color: black;
+  a{
+    text-decoration: none;
+    color: #999999;
+  }
+  a:hover{
+    color: white;
+  }
+}
+// .each_challenge_link{
+
 // }
+#challenge_index{
+  margin-top: 1em;
+  padding: 1.5em;
+  -moz-box-shadow:inset -3px 2px 6px #000000;
+  -webkit-box-shadow:inset -3px 2px 6px #000000;
+  box-shadow:inset -3px 2px 6px #000000;
+  float: left;
+  width: 60%;
+
+  h1{
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  :nth-child(even){
+    padding: 0.5em;
+    background-color: #F5F5F5;
+    a{
+      background-color: #F5F5F5;
+      color: black;
+      text-decoration: none;
+    }
+  }
+  :nth-child(odd){
+    padding: 0.5em;
+    background-color: white;
+    a{
+      background-color: white;
+
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
+
+#challenge_heads_up{
+  padding: 0.5em;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+#right_nav{
+  margin-top: 3em;
+  float: right;
+  width: 30%;
+  img{
+    width: 40%;
+  }
+}
 
 .day_links:hover {
   color: white;
@@ -75,15 +162,7 @@
   }
 }
 
-
-
-.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
-.ui-timepicker-div dl { text-align: left; }
-.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
-.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
-.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
-
-.ui-timepicker-rtl{ direction: rtl; }
-.ui-timepicker-rtl dl { text-align: right; }
-.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+// footer {
+//   clear:both;
+//   background:#cc9;
+// }
