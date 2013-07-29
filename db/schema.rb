@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727232710) do
+ActiveRecord::Schema.define(:version => 20130729004138) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.text     "week"
-    t.text     "day"
+    t.integer  "week"
+    t.integer  "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
-    t.date     "start"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"
@@ -74,6 +73,14 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "staffs", :force => true do |t|
+    t.string   "name"
+    t.string   "home_location"
+    t.integer  "phase_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -87,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "staff"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
