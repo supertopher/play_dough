@@ -8,6 +8,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  challenge_id :integer
+#  name         :string(255)
 #
 
 class Phase < ActiveRecord::Base

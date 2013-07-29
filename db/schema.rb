@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(:version => 20130729014820) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "cohort_id"
     t.boolean  "staff"
+    t.integer  "cohort_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
