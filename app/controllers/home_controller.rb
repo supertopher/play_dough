@@ -1,5 +1,23 @@
 class HomeController < ApplicationController
   def index
+    phase_time = current_user.cohort.current_phase_day
+    current_user_events = current_user.cohort.phase.events
+
+    phase_number = current_user.cohort.phase.number
+    if phase_number == 2
+      phase_time[0] = phase_time.first - 3
+    elsif phase_number == 3
+      phase_time[0] = phase_time.first - 6
+    end
+    @events_for_today = []
+
+    current_user_events.each do |event|
+      event.event_times.each do |event_time|
+        if event_time.week == phase_time.first && event_time.day == phase_time.last
+          @events_for_today << event
+        end
+      end
+    end
     #make these helper methods: todays_events, events_by_cohort, cohort_wide_events
   	# @all_phases = []
   	# phase_count = Phase.all.count

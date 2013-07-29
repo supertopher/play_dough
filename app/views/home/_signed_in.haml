@@ -1,4 +1,14 @@
 %h2 Dis is the user dashboard
+%h1.todays_events= "Events for today:"
+- @events_for_today.each do |event|
+  .event_title
+  = event.title
+  .event_url
+  = event.url
+  .event_description
+  = event.description
+
+%h3 Date crap
 .date= "Date now: #{DateTime.now}"
 .date= "Month: #{DateTime.now.month}"
 .date= "Day: #{DateTime.now.day}"
@@ -25,4 +35,15 @@
 
 / before save double-check the phase day
 - if current_user.cohort
-  - current_user.cohort.start_date
+  .cohort_methods start_date:
+  = current_user.cohort.start_date
+  .cohort_methods cur_phase_day:
+  = current_user.cohort.current_phase_day
+  .cohort_methods expired?:
+  = current_user.cohort.expired?
+  .cohort_methods week_at_dbc:
+  = current_user.cohort.week_at_dbc
+  .cohort_methods day in week at dbc:
+  = current_user.cohort.day_in_week_at_dbc
+  %br
+  %br

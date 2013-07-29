@@ -25,7 +25,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'annotate'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
   gem 'wirble'

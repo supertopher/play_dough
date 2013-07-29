@@ -36,5 +36,5 @@ PlayDough::Application.configure do
   config.assets.debug = true
 
   # Better errors ip allow
-  BetterErrors::Middleware.allow_ip! '192.168.0.225'
+  # BetterErrors::Middleware.allow_ip! '192.168.0.225'
 end

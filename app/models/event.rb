@@ -13,12 +13,12 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :title, :description, :url, :start, :phase_events_attributes, :phases_attributes, :event_times_attributes
-  # accepts_nested_attributes_for :event_times
+  # attr_accessible :
   has_many :phase_events
   has_many :phases, :through => :phase_events
   has_many :event_times
   accepts_nested_attributes_for :phase_events, :phases, :event_times
-  
+
 
   # def parse_start_time
   # 	self.start_time
