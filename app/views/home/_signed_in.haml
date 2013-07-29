@@ -1,5 +1,18 @@
-%h2 Here are the phawdawses:
+%h2 Dis is the user dashboard
+.date= "Date now: #{DateTime.now}"
+.date= "Month: #{DateTime.now.month}"
+.date= "Day: #{DateTime.now.day}"
+.date= "Minute: #{DateTime.now.min}"
+.date= "day: #{DateTime.now.strftime("%u")}"
+.date= "Is it Sunday? #{DateTime.now.sunday?}"
+.date= "Is it Monday? #{DateTime.now.monday?}"
+.date= "Is it tuesday? #{DateTime.now.tuesday?}"
+.date= "Is it wednesday? #{DateTime.now.wednesday?}"
+.date= "Is it thursday? #{DateTime.now.thursday?}"
+.date= "Is it friday? #{DateTime.now.friday?}"
+.date= "Is it saturday? #{DateTime.now.saturday?}"
 
-- @phases.each do |phase|
-  = link_to "Phase #{phase.number} in #{phase.location}", phase_path(phase)
-  %br
+%h2= "Current user: #{current_user.email}"
+%h2= "Current user's cohort: #{current_user.cohort.name}"
+%h2= "Current user's cohort start date: #{current_user.cohort.start_date}"
+%h2= "Current user's phase: #{current_user.cohort.phase.name}"
