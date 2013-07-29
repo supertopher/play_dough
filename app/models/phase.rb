@@ -17,4 +17,11 @@ class Phase < ActiveRecord::Base
   has_many :events, :through => :phase_events
   attr_accessible :number, :location
   accepts_nested_attributes_for :events
+  after_create :set_name
+  has_many :cohorts
+
+  def set_name
+    self.name = "Phase #{self.number} in #{self.location}"
+    self.save
+  end
 end
