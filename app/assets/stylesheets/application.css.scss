@@ -12,6 +12,7 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+ $accent: #999999;
 
  body{
   margin: 0;
@@ -22,9 +23,9 @@
   background-color: black;
   color: white;
   text-decoration: none;
-  -moz-box-shadow: -3px 2px 6px #999999;
--webkit-box-shadow: -3px 2px 6px #999999;
-box-shadow: -3px 2px 6px #999999;
+  -moz-box-shadow: -3px 2px 6px $accent;
+-webkit-box-shadow: -3px 2px 6px $accent;
+box-shadow: -3px 2px 6px $accent;
 
   .white_bar{
     margin-left: 0.5%;
@@ -40,7 +41,7 @@ box-shadow: -3px 2px 6px #999999;
     display: inline-block;
 
     a{
-      color: #999999;
+      color: $accent;
     }
   }
 
@@ -93,7 +94,7 @@ box-shadow: -3px 2px 6px #999999;
   background-color: black;
   a{
     text-decoration: none;
-    color: #999999;
+    color: $accent;
   }
   a:hover{
     color: white;
