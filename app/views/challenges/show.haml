@@ -13,4 +13,14 @@
 .challenge_comment_area
   %h2 Discussion
   .challenge_comments
-    -@challenge.comments
+    -@challenge.comments.each do |this_comment|
+      .single_comment
+        =this_comment.body
+        .comment_email= this_comment.user.email
+        %hr
+  .new_comment_form
+    Comments use github flavored markdown
+    = form_for @comment do |f|
+      = hidden_field_tag :challenge_id, @challenge.id
+      = f.text_area :body, cols: 80, rows: 3
+      = f.submit

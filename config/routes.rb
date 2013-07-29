@@ -3,7 +3,7 @@ PlayDough::Application.routes.draw do
   root :to => 'home#index'
   resources   :phases
   resources   :events
-  resources   :challenges
+  resources   :challenges, :comments
   resources   :cohorts
   devise_for  :users, :controllers => { :registration => "registrations" }
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
