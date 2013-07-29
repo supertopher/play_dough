@@ -1,6 +1,7 @@
 %h1= "#{@cohort.name} #{@cohort.year}"
-= link_to "Create User", new_user_registration_path
-= link_to "Edit User", edit_user_registration_path
+= link_to "Create User", rails_admin.new_path(:user)
+%h2.cohort_members Cohort members:
 - @cohort.users.each do |user|
   = user.email
+  = link_to "Edit user", rails_admin.edit_path(:user, user.id)
 

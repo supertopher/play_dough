@@ -10,6 +10,7 @@
 #
 
 class Cohort < ActiveRecord::Base
-  attr_accessible :name, :year, :start_date
+  attr_accessible :name, :year, :start_date, :phase_id
   has_many :users
+  belongs_to :phase
 end
