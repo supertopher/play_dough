@@ -1,14 +1,18 @@
-%h1 Create Challenges! You're here now
-= form_for :challenge, url: challenges_path do
-  =text_field :challenge, :name, placeholder: "Name"
-  =text_field :challenge, :actor_id, placeholder: "Actor ID"
-  %div
-  =text_field :challenge, :challenge_unit_id, placeholder: "Unit ID"
-  =text_field :challenge, :level, placeholder: "Level"
-  %div
-  =text_field :challenge, :default_week, placeholder: "Default Week"
-  =text_field :challenge, :default_day, placeholder: "Default Day"
-  %div=text_area  :challenge, :description, placeholder: "Challenge Text"
-  %div Required? #{check_box :challenge, :required}
-  %div=submit_tag
-.link_back=link_to "Back to Challenges Home", challenges_path
+/ %script{src: "http://strapdownjs.com/v/0.2/strapdown.js"}
+.this_challenge
+  %h1 Create Challenges! You're here now
+  = form_for :challenge, url: challenges_path do
+    =text_field :challenge, :name, placeholder: "Name"
+    =text_field :challenge, :actor_id, placeholder: "Actor ID"
+    %div
+    =text_field :challenge, :challenge_unit_id, placeholder: "Unit ID"
+    =text_field :challenge, :level, placeholder: "Level"
+    %div
+    =text_field :challenge, :default_week, placeholder: "Default Week"
+    =text_field :challenge, :default_day, placeholder: "Default Day"
+    %div=text_area  :challenge, :description, placeholder: "Challenge Text", class: "text_area"
+    %div Required? #{check_box :challenge, :required}
+    %div=submit_tag
+  .link_back=link_to "Back to Challenges Home", challenges_path
+.challenge_comment_area
+  .live_preview
