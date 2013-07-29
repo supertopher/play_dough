@@ -15,7 +15,7 @@
   .challenge_comments
     -@challenge.comments.each do |this_comment|
       .single_comment
-        =this_comment.body
+        =@markdown.render(this_comment.body).html_safe
         .comment_email= this_comment.user.email
         %hr
   .new_comment_form

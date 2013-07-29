@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    pp params
     @comment = Comment.new(params[:comment])
     @comment.user = current_user
     challenge_page = Challenge.find(params[:challenge_id])
