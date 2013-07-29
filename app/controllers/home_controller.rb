@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     current_user_events.each do |event|
       event.event_times.each do |event_time|
         if event_time.week.to_i == phase_time.first && event_time.day.to_i == phase_time.last
-          @events_for_today << event
+          @events_for_today << [event, event_time]
         end
       end
     end
