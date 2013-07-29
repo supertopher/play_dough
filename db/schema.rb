@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
   create_table "cohorts", :force => true do |t|
     t.string  "name"
     t.string  "year"
-    t.string  "start_date"
+    t.date    "start_date"
     t.integer "phase_id"
   end
 
