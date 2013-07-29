@@ -18,4 +18,6 @@
 
 class Challenge < ActiveRecord::Base
   attr_accessible :actor_id, :challenge_unit_id, :description, :level, :name, :required
+  belongs_to :phase
+  has_many :comments
 end

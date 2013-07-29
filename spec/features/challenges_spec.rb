@@ -2,6 +2,7 @@ require 'spec_helper'
 
 10.times { FactoryGirl.create(:user) }
 10.times { FactoryGirl.create(:challenge) }
+FactoryGirl.create(:cohort)
 
 describe "challenges" do
   let(:challenge) { FactoryGirl.create(:challenge) }
@@ -17,7 +18,7 @@ describe "challenges" do
 
     it "should take a user to new challenge path upon link click" do
       visit challenges_path
-      click_link 'Create a new Challenge'
+      click_link 'Create a New Challenge'
       current_path.should == new_challenge_path
     end
 
@@ -50,6 +51,26 @@ describe "challenges" do
       visit challenge_path(first)
       click_link("Back to Challenges Home")
       current_path.should == challenges_path
+    end
+  end
+
+  context "creating a new challenge" do
+    it "should reach the new_challenge page" do
+      visit new_challenge_path
+      page.should have_content("Create Challenges! You're here now")
+    end
+
+    it "should enter data into a forms and be able to submit" do
+      visit new_challenge_path
+        fill_in 'Name',           with: "Form Test"
+        fill_in 'Actor ID',       with: "1"
+        fill_in 'Unit ID',        with: "2"
+        fill_in 'Level',          with: "3"
+        fill_in 'Default Week',   with: "1"
+        fill_in 'Default Day',    with: "1"
+        fill_in "Challenge Text", with: "Challenge Text"
+        check   'challenge_required'
+        click_button 'Save changes'
     end
   end
 

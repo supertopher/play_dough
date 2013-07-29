@@ -2,6 +2,8 @@ class ChallengesController < ApplicationController
 
   def index
     @challenge_list = Challenge.limit(20).order('id desc')
+    # Changes for understanding legacy logic, not permanent
+    # @challenge_list = Challenge.find_all_by_default_week(1)
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
       :autolink => true, :space_after_headers => true,
       :fenced_code_blocks => true)
@@ -9,6 +11,7 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
+    # markdown to HTML
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
       :autolink => true, :space_after_headers => true,
       :fenced_code_blocks => true)
@@ -19,9 +22,8 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    pp params
     @challenge = Challenge.create(params[:challenge])
-    redirect_to root_path
+    redirect_to challenge_path(@challenge)
   end
 
   def edit

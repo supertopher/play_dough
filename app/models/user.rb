@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  cohort_id              :integer
+#  staff                  :boolean
 #
 
 class User < ActiveRecord::Base
@@ -23,6 +25,8 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :cohort_id, :staff
+  belongs_to :cohort
+  has_many :comments
 
 end
