@@ -3,6 +3,7 @@ class CreateCohorts < ActiveRecord::Migration
     create_table :cohorts do |t|
       t.string :name
       t.string :year
+
       t.date :start_date
       t.belongs_to :phase
     end

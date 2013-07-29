@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729040418) do
+ActiveRecord::Schema.define(:version => 20130729170023) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
     t.string  "year"
     t.date    "start_date"
     t.integer "phase_id"
+    t.string  "current_phase_day"
   end
 
   create_table "comments", :force => true do |t|

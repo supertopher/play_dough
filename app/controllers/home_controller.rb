@@ -27,9 +27,13 @@ class HomeController < ApplicationController
    #  @active_phases
   end
 
+  # if current_user.cohort.current_phase_day.nil? && current_user.cohort.start_date < DateTime.now
+  # current_user.cohort.current_phase_day = DateTime.now - current_user.cohort.start_date
+
+
   def show
   end
-  
+
   def new
   end
 

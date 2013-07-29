@@ -16,6 +16,13 @@
 -if current_user.cohort
   %h2= "Current user's cohort: #{current_user.cohort.name}"
   %h2= "Current user's cohort start date: #{current_user.cohort.start_date}"
+  %h3 Is current_phase_day nil?
+  = current_user.cohort.current_phase_day.nil?
+  %h2= "Current user's cohort's current_phase_day: #{current_user.cohort.current_phase_day}"
   %h2= "Current user's phase: #{current_user.cohort.phase.name}"
 -else
   %h2 Please create a cohort (also staff don't have cohorts)
+
+/ before save double-check the phase day
+- if current_user.cohort
+  - current_user.cohort.start_date
