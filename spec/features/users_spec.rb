@@ -18,7 +18,7 @@ describe "Students" do
   end
 
   it "should not be able to see staff links" do
-    pending
+    pending "Made Staff permissions"
     visit root_path
     page.should_not have_link("Create Event")
     page.should_not have_link("Create Phase")

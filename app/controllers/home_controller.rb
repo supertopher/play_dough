@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  skip_before_filter :require_login
+
   def index
     if current_user && current_user.cohort
       phase_time = current_user.cohort.current_phase_day
