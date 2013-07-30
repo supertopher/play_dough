@@ -28,7 +28,6 @@ class EventsController < ApplicationController
     event_times = params[:event_time]
     start_time = Time.parse("#{event_times[:start_hour]}:#{event_times[:start_minute]}")
     end_time = Time.parse("#{event_times[:end_hour]}:#{event_times[:end_minute]}")
-    
 
     params[:week].each do |week_and_day, status|
       if status == '1'
