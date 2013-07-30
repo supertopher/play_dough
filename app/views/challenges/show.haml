@@ -19,7 +19,7 @@
         .comment_email= this_comment.user.email
         %hr
   .new_comment_form
-    Comments use github flavored markdown
+    Comments use markdown
     = form_for @comment do |f|
       = hidden_field_tag :challenge_id, @challenge.id
       = f.text_area :body, cols: 60, rows: 5
