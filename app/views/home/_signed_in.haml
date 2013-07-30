@@ -7,8 +7,8 @@
       %h4= event.title
       .event_url= event.url
       .event_description= event.description
-      .event_time= "Start time: #{event_time.start_time.localtime.strftime('%r')}"
-      .event_time= "End time: #{event_time.end_time.localtime.strftime('%r')}"
+      .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
+      .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
   .weeks_events
     %h1 Events for the week
     - @days.each do |day|
@@ -22,8 +22,8 @@
               %h4= event.title
               .event_url= event.url
               .event_description= event.description
-              .event_time= "Start time: #{event_time.start_time.localtime.strftime('%r')}"
-              .event_time= "End time: #{event_time.end_time.localtime.strftime('%r')}"
+              .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
+              .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
 -else
   %h2 Welcome New Boot!
   %p When you are assigned a cohort your callender will be here.
