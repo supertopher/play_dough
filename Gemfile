@@ -19,6 +19,12 @@ gem 'debugger'
 # markdown parsing
 gem 'redcarpet'
 
+#bootstrap 3.0rc1
+# gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+#                               :github => 'anjlab/bootstrap-rails',
+#                               :branch => '3.0.0'
+
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
@@ -36,9 +42,11 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass', git: 'git://github.com/intridea/bootstrap-sass.git', branch: '3.0.0-wip'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

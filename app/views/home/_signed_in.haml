@@ -1,5 +1,6 @@
 %h2 Dis is the user dashboard
-%h1.todays_events= "Events for today:"
+%h1.todays_events Events for today
+%h2.today= "Today is: #{return_day(current_user.cohort.day_in_week_at_dbc)}"
 - @events_for_today.each do |event, event_time|
   .event_title
   = event.title
@@ -12,12 +13,7 @@
   .event_time End:
   = event_time.end_time.localtime.strftime("%r")
 
-%h3 Date crap
-.date= "Date now: #{DateTime.now}"
-.date= "Month: #{DateTime.now.month}"
-.date= "Day: #{DateTime.now.day}"
-.date= "Minute: #{DateTime.now.min}"
-.date= "day: #{DateTime.now.strftime("%u")}"
+%h1.weeks_events Events for the week
 .date= "Is it Sunday? #{DateTime.now.sunday?}"
 .date= "Is it Monday? #{DateTime.now.monday?}"
 .date= "Is it tuesday? #{DateTime.now.tuesday?}"
@@ -25,6 +21,14 @@
 .date= "Is it thursday? #{DateTime.now.thursday?}"
 .date= "Is it friday? #{DateTime.now.friday?}"
 .date= "Is it saturday? #{DateTime.now.saturday?}"
+
+%h3 Date crap
+.date= "Date now: #{DateTime.now}"
+.date= "Month: #{DateTime.now.month}"
+.date= "Day: #{DateTime.now.day}"
+.date= "Minute: #{DateTime.now.min}"
+.date= "day: #{DateTime.now.strftime("%u")}"
+
 
 %h2= "Current user: #{current_user.email}"
 -if current_user.cohort
