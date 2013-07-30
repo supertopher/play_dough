@@ -1,0 +1,29 @@
+<%= form_for @event do |f| %>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title, :value => @event.title %><br/>
+  <%= f.label :description %><br/>
+  <%= f.text_area :description, :value => @event.description %><br />
+
+
+
+<p><%= f.fields_for :event_time do |event_time|  %></p>
+  <%= render "event_times_edit", :f => event_time %>
+<% end %>
+
+
+<p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
+  <% @phases.each do |phase_array| %>
+    <%= (check_box "phase_event", "#{phase_array.last}") + "#{phase_array.first}" %>
+    <br>
+    <% end %>
+<% end %>
+
+<p><%= f.fields_for :phases do |phases|  %></p>
+  <%= render "phases", :f => phases %>
+    <% end %>
+
+  <%= f.submit %>
+<% end %>
+
+
+

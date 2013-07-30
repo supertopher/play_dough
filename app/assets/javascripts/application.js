@@ -11,17 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery.ui.all
 //= require jquery_ujs
 //= require_tree .
 
-datePicker = new Array();
-$(document).ready(function() {
-  $(".day_links").on('click', function(e){
-    e.preventDefault();
-    console.log(this)
-    datePicker.push (this.text)
-      console.log(datePicker)
-  })
-  $('.datetimeinput').timepicker();
-})
+// datePicker = new Array();
+// $(document).ready(function() {
+//   $(".day_links").on('click', function(e){
+//     e.preventDefault();
+//     console.log(this)
+//     datePicker.push (this.text)
+//       console.log(datePicker)
+//   })
+//   $('.datetimeinput').timepicker();
+// })

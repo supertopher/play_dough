@@ -1,0 +1,62 @@
+%h2 Dis is the user dashboard
+-if current_user.cohort
+  %h1.todays_events Events for today
+  %h2.today Today is:  #{return_day(current_user.cohort.day_in_week_at_dbc)}
+  - @events_for_today.each do |event, event_time|
+    .event_title
+    = event.title
+    .event_url
+    = event.url
+    .event_description
+    = event.description
+    .event_time Start:
+    = event_time.start_time.localtime.strftime("%r")
+    .event_time End:
+    = event_time.end_time.localtime.strftime("%r")
+
+  %h1.weeks_events Events for the week
+  .date= "Is it Sunday? #{DateTime.now.sunday?}"
+  .date= "Is it Monday? #{DateTime.now.monday?}"
+  .date= "Is it tuesday? #{DateTime.now.tuesday?}"
+  .date= "Is it wednesday? #{DateTime.now.wednesday?}"
+  .date= "Is it thursday? #{DateTime.now.thursday?}"
+  .date= "Is it friday? #{DateTime.now.friday?}"
+  .date= "Is it saturday? #{DateTime.now.saturday?}"
+
+  %h3 Date crap
+  .date= "Date now: #{DateTime.now}"
+  .date= "Month: #{DateTime.now.month}"
+  .date= "Day: #{DateTime.now.day}"
+  .date= "Minute: #{DateTime.now.min}"
+  .date= "day: #{DateTime.now.strftime("%u")}"
+
+
+  %h2= "Current user: #{current_user.email}"
+  -if current_user.cohort
+    %h2= "Current user's cohort: #{current_user.cohort.name}"
+    %h2= "Current user's cohort start date: #{current_user.cohort.start_date}"
+    %h3 Is current_phase_day nil?
+    = current_user.cohort.current_phase_day.nil?
+    %h2= "Current user's cohort's current_phase_day: #{current_user.cohort.current_phase_day}"
+    %h2= "Current user's phase: #{current_user.cohort.phase.name}"
+  -else
+    %h2 Please create a cohort (also staff don't have cohorts)
+
+  / before save double-check the phase day
+  - if current_user.cohort
+    .cohort_methods start_date:
+    = current_user.cohort.start_date
+    .cohort_methods cur_phase_day:
+    = current_user.cohort.current_phase_day
+    .cohort_methods expired?:
+    = current_user.cohort.expired?
+    .cohort_methods week_at_dbc:
+    = current_user.cohort.week_at_dbc
+    .cohort_methods day in week at dbc:
+    = current_user.cohort.day_in_week_at_dbc
+    %br
+    %br
+-else
+  %h2 Welcome New Boot!
+  %p When you are assigned a cohort your callender will be here.
+

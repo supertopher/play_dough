@@ -2,6 +2,7 @@ require 'spec_helper'
 
 10.times { FactoryGirl.create(:user) }
 10.times { FactoryGirl.create(:challenge) }
+FactoryGirl.create(:cohort)
 
 describe "challenges" do
   let(:challenge) { FactoryGirl.create(:challenge) }

@@ -6,5 +6,8 @@
   = f.text_field :year
   %div
   = f.label :start_date, "Start Date (phases assume cohorts start on a Monday i.e. cohorts should start on a Monday)"
-  = f.text_field :start_date
+  = f.date_select :start_date
+
+  .add_user_button= link_to "Add User to Cohort", "#"
   = f.submit "Create Cohort!"
+

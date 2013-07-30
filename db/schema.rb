@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727232710) do
+ActiveRecord::Schema.define(:version => 20130729205328) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -27,10 +27,35 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
     t.integer  "default_day"
   end
 
+  create_table "cohort_events", :force => true do |t|
+    t.integer "cohort_id"
+    t.integer "event_id"
+  end
+
+  create_table "cohorts", :force => true do |t|
+    t.string  "name"
+    t.string  "year"
+    t.string  "start_date"
+    t.integer "phase_id"
+    t.string  "current_phase_day"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.integer  "karma"
+    t.text     "body"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "comments", ["challenge_id"], :name => "index_comments_on_challenge_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.text     "week"
-    t.text     "day"
+    t.integer  "week"
+    t.integer  "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
@@ -58,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"
+    t.string   "name"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -73,6 +99,14 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "staffs", :force => true do |t|
+    t.string   "name"
+    t.string   "home_location"
+    t.integer  "phase_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -86,6 +120,8 @@ ActiveRecord::Schema.define(:version => 20130727232710) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "staff"
+    t.integer  "cohort_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

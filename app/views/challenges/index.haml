@@ -1,15 +1,34 @@
 .challenge_nav
   =link_to "Create a New Challenge", new_challenge_path
 
-%h1 Index of Challenges
--@challenge_list.each do |this_challenge|
-  %h2=link_to this_challenge.name, challenge_path(this_challenge)
-  %p Core?: #{this_challenge.required}
-  %p Level: #{this_challenge.level}
-  %p Day of Week: #{this_challenge.default_day}
-  %span Created: #{time_ago_in_words(this_challenge.created_at)} ago.
-  -unless this_challenge.created_at == this_challenge.updated_at
-    %span Last Updated: #{time_ago_in_words(this_challenge.updated_at)} ago.
-  %p Description:
-  -#.description=@markdown.render(this_challenge.description).html_safe
-  %hr
+#challenge_index
+  %h1 Today's Challenges (not really)
+  -@challenge_list.each do |this_challenge|
+    .each_challenge_link=link_to this_challenge.name, challenge_path(this_challenge)
+#right_nav
+  =link_to image_tag("/images/xk.png", :title => "XKCD: Humor for Nerdy Smart People (us)"), "http://xkcd.com"
+  #challenge_heads_up
+    Code Path
+    %hr
+    Phase 1
+    %hr
+    Phase 2
+    %hr
+    Phase 3
+
+
+
+/ #challenge_index
+/   %h1 Index of Challenges
+/   -@challenge_list.each do |this_challenge|
+/     %h2=link_to this_challenge.name, challenge_path(this_challenge)
+/     -if this_challenge.required
+/       %p Level: #{this_challenge.level}
+/     -if this_challenge.default_day
+/       %p Day of Week: #{return_day(this_challenge.default_day)}
+/     %span Created: #{time_ago_in_words(this_challenge.created_at)} ago.
+/     -unless this_challenge.created_at == this_challenge.updated_at
+/       %span Last Updated: #{time_ago_in_words(this_challenge.updated_at)} ago.
+/     %p Description:
+/     .description=@markdown.render(this_challenge.description).html_safe
+/     %hr

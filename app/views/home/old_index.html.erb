@@ -1,0 +1,41 @@
+<h1> Welcome To Play Dough </h1>
+
+<h2>Cohort Specific Events</h2>
+
+<% @active_phases.each do |phase| %>
+  <p><%= link_to "Phase: #{phase.number} in #{phase.location}", phase_path(phase) %></p>
+<% end %>
+
+<h2>Today's Events This Week</h2>
+
+<% @todays_events.each do |event| %>
+  <p>Title: <%= event.title %></p>
+  <p>Description: <%= event.description %></p>
+  <p>Url: <%= event.url %></p>
+  <% event.event_times.each do |time_event| %></p>
+    <p>Start Time: <%= time_event.start_time %></p>
+    <p>End Time: <%= time_event.end_time %></p>
+    <p>Day: <%= time_event.day %></p>
+    <p>Week: <%= time_event.week %></p>
+    <p>Phase: <%= time_event.week %></p>
+  <% end %>
+  <% event.phases.each do |phase| %>
+  Phase: <%= phase.number %>
+  Location: <%= phase.location %>
+<% end %>
+<% end %>
+
+
+<h2>Cohort Wide Events This Week</h2>
+
+<% @all_phases.each do |event| %>
+  <p>Title: <%= event.title %></p>
+  <p>Description: <%= event.description %></p>
+  <p>Url: <%= event.url %></p>
+  <% event.event_times.each do |time_event| %></p>
+    <p>Start Time: <%= time_event.start_time %></p>
+    <p>End Time: <%= time_event.end_time %></p>
+    <p>Day: <%= time_event.day %></p>
+    <p>Week: <%= time_event.week %></p>
+  <% end %>
+<% end %>
