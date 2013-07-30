@@ -26,6 +26,8 @@ gem 'redcarpet'
 
 
 group :test, :development do
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda-matchers'
@@ -46,7 +48,7 @@ end
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'bootstrap-sass', git: 'git://github.com/intridea/bootstrap-sass.git', branch: '3.0.0-wip'
+  # gem 'bootstrap-sass', git: 'git://github.com/intridea/bootstrap-sass.git', branch: '3.0.0-wip'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -68,7 +70,5 @@ gem 'jquery-ui-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-
 
 gem "devise"

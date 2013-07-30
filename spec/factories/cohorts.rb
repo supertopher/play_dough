@@ -10,8 +10,8 @@ FactoryGirl.define do
   factory :cohort do
     name         {Faker::Name.name}
     year         {Time.now.year}
-    start_date   {Time.now.day}
-    phase_id     1
+    start_date   {Time.now.to_date}
+    phase
   end
 end
 
