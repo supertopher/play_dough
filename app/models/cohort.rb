@@ -24,11 +24,11 @@ class Cohort < ActiveRecord::Base
   end
 
   def expired?
-     self.start_date === self.start_date + 63 if  self.start_date
+     self.start_date.to_i === self.start_date.to_i + 63 if  self.start_date
   end
 
   def days_at_dbc
-    (Time.now.localtime.to_date - self.start_date.to_date + 1).to_i if  self.start_date
+    (Time.now.localtime.to_date - self.start_date.to_date + 1).to_i if self.start_date
   end
 
   def week_at_dbc

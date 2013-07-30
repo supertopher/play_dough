@@ -18,7 +18,6 @@ class ChallengesController < ApplicationController
     @comment = Comment.new
     @comment.challenge = @challenge
     @comment.user = current_user
-    pp @comment
   end
 
   def new
