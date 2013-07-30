@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130729205328) do
   create_table "cohorts", :force => true do |t|
     t.string  "name"
     t.string  "year"
-    t.date    "start_date"
+    t.string  "start_date"
     t.integer "phase_id"
     t.string  "current_phase_day"
   end
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20130729205328) do
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.text     "week"
-    t.text     "day"
+    t.integer  "week"
+    t.integer  "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(:version => 20130729205328) do
     t.string   "title"
     t.string   "url"
     t.string   "description"
-    t.date     "start"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -81,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20130729205328) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
-    t.date     "start"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"
@@ -122,8 +120,8 @@ ActiveRecord::Schema.define(:version => 20130729205328) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "cohort_id"
     t.boolean  "staff"
+    t.integer  "cohort_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,21 +1,21 @@
 class HomeController < ApplicationController
   def index
     if current_user
-      phase_time = current_user.cohort.current_phase_day
-      current_user_events = current_user.cohort.phase.events
-
-      phase_number = current_user.cohort.phase.number
-      if phase_number == 2
-        phase_time[0] = phase_time.first - 3
-      elsif phase_number == 3
-        phase_time[0] = phase_time.first - 6
-      end
-      @events_for_today = []
-
-      current_user_events.each do |event|
-        event.event_times.each do |event_time|
-          if event_time.week.to_i == phase_time.first && event_time.day.to_i == phase_time.last
-            @events_for_today << [event, event_time]
+      if current_user.cohort
+        phase_time = current_user.cohort.current_phase_day
+        current_user_events = current_user.cohort.phase.events
+        phase_number = current_user.cohort.phase.number
+        if phase_number == 2
+          phase_time[0] = phase_time.first - 3
+        elsif phase_number == 3
+          phase_time[0] = phase_time.first - 6
+        end
+        @events_for_today = []
+        current_user_events.each do |event|
+          event.event_times.each do |event_time|
+            if event_time.week.to_i == phase_time.first && event_time.day.to_i == phase_time.last
+              @events_for_today << [event, event_time]
+            end
           end
         end
       end
@@ -45,7 +45,7 @@ class HomeController < ApplicationController
    #  @all_phases
    #  @todays_events
    #  @active_phases
-  end
+ end
 
   # if current_user.cohort.current_phase_day.nil? && current_user.cohort.start_date < DateTime.now
   # current_user.cohort.current_phase_day = DateTime.now - current_user.cohort.start_date
