@@ -39,6 +39,4 @@ class Cohort < ActiveRecord::Base
   def day_in_week_at_dbc
     (days_at_dbc % 7).to_i if  self.start_date
   end
-
-
 end
