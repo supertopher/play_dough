@@ -12,11 +12,3 @@
 
 require 'factory_girl'
 require 'faker'
-
-FactoryGirl.define do
-  factory :phase do
-    name        "Test Lizard"
-    number      1
-    location    "San Francisco"
-  end
-end
