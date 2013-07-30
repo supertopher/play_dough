@@ -13,8 +13,36 @@
     = event_time.start_time.localtime.strftime("%r")
     .event_time End:
     = event_time.end_time.localtime.strftime("%r")
-
+  - @days = [1,2,3,4,5,6,7]
   %h1.weeks_events Events for the week
+  - @days.each do |day|
+    - @day_events = @events_for_week.select do |event, event_time|
+      - event_time.day == day
+    %h3= return_day(day)
+    - @day_events.each do |event, event_time|
+      %h4.event_title= event.title
+      .event_url= event.url
+      .event_description= event.description
+      .event_time= "Start time: #{event_time.start_time.localtime.strftime('%r')}"
+      .event_time= "End time: #{event_time.end_time.localtime.strftime('%r')}"
+
+
+
+
+  - @events_for_week.each do |event, event_time|
+    - if event_time.day == 1
+      %div Monday
+      .event_title
+      = event.title
+      .event_url
+      = event.url
+      .event_description
+      = event.description
+      .event_time Start:
+      = event_time.start_time.localtime.strftime("%r")
+      .event_time End:
+      = event_time.end_time.localtime.strftime("%r")
+
   .date= "Is it Sunday? #{DateTime.now.sunday?}"
   .date= "Is it Monday? #{DateTime.now.monday?}"
   .date= "Is it tuesday? #{DateTime.now.tuesday?}"
