@@ -21,6 +21,7 @@ class ChallengesController < ApplicationController
   end
 
   def new
+    redirect_to challenges_path unless current_user.staff
     @challenge = Challenge.new
   end
 

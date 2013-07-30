@@ -72,8 +72,13 @@ describe "challenges" do
       fill_in 'user[password]',               with: user.password
       click_button('Sign in')
     end
+
+    it "should not have a link to create challenge for student user" do
+      visit challenges_path
+      page.should_not have_link("Create a New Challenge")
+    end
+
     it "students should NOT reach the new_challenge page" do
-      pending "Staff permissions on create path"
       visit new_challenge_path
       page.should_not have_content("Create Challenges! You're here now")
     end
