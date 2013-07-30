@@ -14,9 +14,13 @@
  */
 
 
- $accent: #999999;
+$accent: #999999;
 
- body{
+html{
+  font-family: 'Droid Sans', sans-serif;
+}
+
+body{
   margin: 0;
 }
 
