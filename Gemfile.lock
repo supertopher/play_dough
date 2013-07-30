@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/intridea/bootstrap-sass.git
+  revision: 368bd4bccf49efa5caac493cd16e29bedbbf545a
+  branch: 3.0.0-wip
+  specs:
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,13 +41,8 @@ GEM
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.1.1)
-    better_errors (0.9.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (2.3.2.0)
-      sass (~> 3.2)
     builder (3.0.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -211,8 +214,8 @@ PLATFORMS
 DEPENDENCIES
   annotate
   awesome_print
-  better_errors
   binding_of_caller
+  bootstrap-sass!
   capybara
   coffee-rails (~> 3.2.1)
   debugger

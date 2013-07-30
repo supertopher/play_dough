@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729040418) do
+ActiveRecord::Schema.define(:version => 20130729205328) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -27,11 +27,17 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
     t.integer  "default_day"
   end
 
+  create_table "cohort_events", :force => true do |t|
+    t.integer "cohort_id"
+    t.integer "event_id"
+  end
+
   create_table "cohorts", :force => true do |t|
     t.string  "name"
     t.string  "year"
-    t.string  "start_date"
+    t.date    "start_date"
     t.integer "phase_id"
+    t.string  "current_phase_day"
   end
 
   create_table "comments", :force => true do |t|
@@ -48,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
 
   create_table "event_times", :force => true do |t|
     t.integer  "event_id"
-    t.integer  "week"
-    t.integer  "day"
+    t.text     "week"
+    t.text     "day"
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at", :null => false
@@ -60,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
     t.string   "title"
     t.string   "url"
     t.string   "description"
+    t.date     "start"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -74,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
   create_table "phases", :force => true do |t|
     t.integer  "number"
     t.string   "location"
+    t.date     "start"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "challenge_id"
@@ -114,8 +122,8 @@ ActiveRecord::Schema.define(:version => 20130729040418) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.boolean  "staff"
     t.integer  "cohort_id"
+    t.boolean  "staff"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

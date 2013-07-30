@@ -12,6 +12,9 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+
+@import 'bootstrap';
+
  $accent: #999999;
 
  body{

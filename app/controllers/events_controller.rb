@@ -17,6 +17,8 @@ class EventsController < ApplicationController
   end
 
   def create
+    p "love " * 90
+    ap params
     @event = Event.create(params[:event])
     params[:phase_event].each do |phase, value|
       if value == '1'
@@ -26,7 +28,7 @@ class EventsController < ApplicationController
     event_times = params[:event_time]
     start_time = Time.parse("#{event_times[:start_hour]}:#{event_times[:start_minute]}")
     end_time = Time.parse("#{event_times[:end_hour]}:#{event_times[:end_minute]}")
-    debugger
+    
 
     params[:week].each do |week_and_day, status|
       if status == '1'
@@ -49,8 +51,6 @@ end
   end
 
   def update
-    ap params
-    puts "love" * 80
     event = Event.find(params[:id])
     event.update_attributes(params[:event])
     ap params

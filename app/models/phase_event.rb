@@ -12,7 +12,7 @@
 
 class PhaseEvent < ActiveRecord::Base
   attr_accessible :phase_id, :event_id, :phase_attributes, :phase
-  belongs_to :event 
+  belongs_to :event
   belongs_to :phase
   accepts_nested_attributes_for :phase
 end
