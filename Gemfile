@@ -26,6 +26,8 @@ gem 'redcarpet'
 
 
 group :test, :development do
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda-matchers'

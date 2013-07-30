@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     if current_user
       if current_user.cohort
         phase_time = current_user.cohort.current_phase_day
-        current_user_events = current_user.cohort.phase.events
+        current_user_events = current_user.cohort.phase.events if current_user.cohort.phase.events
         phase_number = current_user.cohort.phase.number
         if phase_number == 2
           phase_time[0] = phase_time.first - 3
