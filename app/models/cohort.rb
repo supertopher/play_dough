@@ -13,7 +13,7 @@
 
 
 class Cohort < ActiveRecord::Base
-  attr_accessible :name, :year, :start_date, :phase_id, :current_phase_day
+  attr_accessible :name, :year, :start_date, :phase_id, :phase, :current_phase_day
   has_many :users
   has_many :cohort_events
   has_many :cohorts, through: :cohort_events
@@ -21,7 +21,7 @@ class Cohort < ActiveRecord::Base
 
 
   def current_phase_day
-    [week_at_dbc, day_in_week_at_dbc] if  self.start_date
+    [week_at_dbc, day_in_week_at_dbc]
   end
 
   def expired?
@@ -39,6 +39,4 @@ class Cohort < ActiveRecord::Base
   def day_in_week_at_dbc
     (days_at_dbc % 7).to_i if  self.start_date
   end
-
-
 end
