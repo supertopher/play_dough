@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :cohort, :staff, :cohort
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :cohort, :staff, :cohort, :name
   belongs_to :cohort
   has_many :comments
 

@@ -36,28 +36,28 @@ purple_martins = Cohort.create(name: "Purple Martins", year: '2013', start_date:
 
 
 20.times do |i|
-  User.create(name: "Super awesome boot"
+  User.create(name: "Super awesome boot",
               email: "skipper_#{i}@example.com",
               password: "password",
               cohort: fiery_skippers)
 end
 
 20.times do |i|
-  User.create(name: "Super awesome boot"
+  User.create(name: "Super awesome boot",
               email: "lizard_#{i}@example.com",
               password: "password",
               cohort: fence_lizards)
 end
 
 20.times do |i|
-  User.create(name: "Super awesome boot"
+  User.create(name: "Super awesome boot",
               email: "fox_#{i}@example.com",
               password: "password",
               cohort: island_foxes)
 end
 
 20.times do |i|
-  User.create(name: "Super awesome boot"
+  User.create(name: "Super awesome boot",
               email: "martin_#{i}@example.com",
               password: "password",
               cohort: purple_martins)
