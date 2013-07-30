@@ -23,8 +23,8 @@ User.create(name: "Jesse Farmer",
             email: "jesse@example.com",
             password: "password",
             staff: true)
-
 phase_1 = Phase.create(number: 1, location: "San Francisco")
+
 phase_2 = Phase.create(number: 2, location: "San Francisco")
 phase_3 = Phase.create(number: 3, location: "San Francisco")
 phase_4 = Phase.create(number: 4, location: "San Francisco")

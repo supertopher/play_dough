@@ -19,7 +19,7 @@ class Phase < ActiveRecord::Base
   attr_accessible :number, :location, :start
   accepts_nested_attributes_for :events
 
-
+  validates :number, uniqueness: {scope: :location, :message => 'cannot have two entries with the same number and location'}
 
 
   after_create :set_name
