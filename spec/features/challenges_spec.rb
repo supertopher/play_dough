@@ -5,9 +5,23 @@ describe "challenges" do
   let!(:challenge) { FactoryGirl.create(:challenge) }
   let!(:user)      { FactoryGirl.create(:user)  }
 
-  context "index" do
+  context "user not logged in" do
+    it "should redirect a non-logged in user to root" do
+      visit challenges_path
+      current_path.should == root_path
+    end
+  end
 
-    it "should take a user to new challenge path upon link click" do
+  context "logged in index" do
+    before(:each) do
+      visit root_path
+      fill_in 'user[email]',                  with: user.email
+      fill_in 'user[password]',               with: user.password
+      click_button('Sign in')
+    end
+
+    it "should take a logged in staff user to new challenge path upon link click" do
+      user.update_attribute(:staff, true)
       visit challenges_path
       click_link 'Create a New Challenge'
       current_path.should == new_challenge_path
@@ -27,6 +41,12 @@ describe "challenges" do
   end#end index context
 
   context "show" do
+    before(:each) do
+      visit root_path
+      fill_in 'user[email]',                  with: user.email
+      fill_in 'user[password]',               with: user.password
+      click_button('Sign in')
+    end
     it "should show title of the post" do
       visit challenge_path(challenge)
       page.should have_content(challenge.name)
@@ -46,12 +66,31 @@ describe "challenges" do
   end
 
   context "creating a new challenge" do
-    it "should reach the new_challenge page" do
+    before(:each) do
+      visit root_path
+      fill_in 'user[email]',                  with: user.email
+      fill_in 'user[password]',               with: user.password
+      click_button('Sign in')
+    end
+
+    it "should not have a link to create challenge for student user" do
+      visit challenges_path
+      page.should_not have_link("Create a New Challenge")
+    end
+
+    it "students should NOT reach the new_challenge page" do
+      visit new_challenge_path
+      page.should_not have_content("Create Challenges! You're here now")
+    end
+
+    it "staff should reach the new_challenge page" do
+      user.update_attribute(:staff, true)
       visit new_challenge_path
       page.should have_content("Create Challenges! You're here now")
     end
 
     it "should enter data into a forms and be able to submit" do
+      user.update_attribute(:staff, true)
       visit new_challenge_path
         fill_in 'Name',           with: "Form Test"
         fill_in 'Actor ID',       with: "1"

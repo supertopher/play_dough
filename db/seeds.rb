@@ -8,6 +8,22 @@
 
 
 require 'faker'
+
+User.create(name: "Jeffrey",
+            email: "jeffrey@example.com",
+            password: "password",
+            staff: true)
+
+User.create(name: "Keith",
+            email: "keith@example.com",
+            password: "password",
+            staff: true)
+
+User.create(name: "Jesse Farmer",
+            email: "jesse@example.com",
+            password: "password",
+            staff: true)
+
 phase_1 = Phase.create(number: 1, location: "San Francisco")
 phase_2 = Phase.create(number: 2, location: "San Francisco")
 phase_3 = Phase.create(number: 3, location: "San Francisco")
@@ -20,25 +36,29 @@ purple_martins = Cohort.create(name: "Purple Martins", year: '2013', start_date:
 
 
 20.times do |i|
-  User.create(email: "skipper_#{i}@example.com",
+  User.create(name: "Super awesome boot"
+              email: "skipper_#{i}@example.com",
               password: "password",
               cohort: fiery_skippers)
 end
 
 20.times do |i|
-  User.create(email: "lizard_#{i}@example.com",
+  User.create(name: "Super awesome boot"
+              email: "lizard_#{i}@example.com",
               password: "password",
               cohort: fence_lizards)
 end
 
 20.times do |i|
-  User.create(email: "fox_#{i}@example.com",
+  User.create(name: "Super awesome boot"
+              email: "fox_#{i}@example.com",
               password: "password",
               cohort: island_foxes)
 end
 
 20.times do |i|
-  User.create(email: "martin_#{i}@example.com",
+  User.create(name: "Super awesome boot"
+              email: "martin_#{i}@example.com",
               password: "password",
               cohort: purple_martins)
 end

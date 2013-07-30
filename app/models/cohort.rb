@@ -19,7 +19,6 @@ class Cohort < ActiveRecord::Base
   has_many :cohorts, through: :cohort_events
   belongs_to :phase
 
-
   def current_phase_day
     [week_at_dbc, day_in_week_at_dbc]
   end
