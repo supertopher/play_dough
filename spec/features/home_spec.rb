@@ -15,28 +15,27 @@ describe 'home page' do
 end
 
 describe "log in / log out / sign up" do
-  it "should allow a user to create an account from users/sign_up" do
-    visit '/users/sign_up'
-    within('.main') do
-      fill_in 'user[email]',                  with: 'test_user@dbc.com'
-      fill_in 'user[password]',               with: 'password'
-      fill_in 'user[password_confirmation]',  with: 'password'
-      click_button 'Sign up'
-    end
-    current_path.should == root_path
-    page.should have_content('Welcome! You have signed up successfully.')
-  end
+let!(:user) { FactoryGirl.create(:user) }
+  # denied for actual user auth
+  # it "should allow a user to create an account from users/sign_up" do
+  #   visit '/users/sign_up'
+  #   within('.main') do
+  #     fill_in 'user[email]',                  with: 'test_user@dbc.com'
+  #     fill_in 'user[password]',               with: 'password'
+  #     fill_in 'user[password_confirmation]',  with: 'password'
+  #     click_button 'Sign up'
+  #   end
+  #   current_path.should == root_path
+  #   page.should have_content('Welcome! You have signed up successfully.')
+  # end
 
   it "should allow a signed in user to sign out" do
-    visit '/users/sign_up'
-    within('.main') do
-      fill_in 'user[email]',                  with: 'test_user@dbc.com'
-      fill_in 'user[password]',               with: 'password'
-      fill_in 'user[password_confirmation]',  with: 'password'
-      click_button 'Sign up'
-    end
+    visit root_path
+    fill_in 'user[email]',                  with: user.email
+    fill_in 'user[password]',               with: user.password
+    click_button('Sign in')
     current_path.should == root_path
-    page.should have_content('Welcome! You have signed up successfully.')
+    page.should have_content('Signed in successfully.')
     click_link 'Logout'
     current_path.should == root_path
     page.should have_content('Signed out successfully.')
