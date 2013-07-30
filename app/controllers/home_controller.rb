@@ -3,7 +3,6 @@ class HomeController < ApplicationController
 
   def index
     if current_user && current_user.cohort
-      debugger
       phase_time = current_user.cohort.current_phase_day
       current_user_events = current_user.cohort.phase.events
       phase_number = current_user.cohort.phase.number
