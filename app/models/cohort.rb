@@ -13,14 +13,14 @@
 
 
 class Cohort < ActiveRecord::Base
-  attr_accessible :name, :year, :start_date, :phase_id, :current_phase_day
+  attr_accessible :name, :year, :start_date, :phase_id, :phase, :current_phase_day
   has_many :users
   belongs_to :phase
 
 
   def current_phase_day
-   	[week_at_dbc, day_in_week_at_dbc] 
-  end  
+   	[week_at_dbc, day_in_week_at_dbc]
+  end
 
   def expired?
      self.start_date === self.start_date + 63
@@ -29,7 +29,7 @@ class Cohort < ActiveRecord::Base
   def days_at_dbc
   	(Time.now.localtime.to_date - self.start_date.to_date + 1).to_i
   end
-  
+
   def week_at_dbc
     ((days_at_dbc / 7) + 1).to_i
   end
