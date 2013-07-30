@@ -1,29 +1,30 @@
-%h2 Become a rails developer in 9 intense weeks.
 -if current_user.cohort
   .todays_events
-    %h1 Events for today
-    %h2.today Today is #{return_day(current_user.cohort.day_in_week_at_dbc)}
-    - @events_for_today.each do |event, event_time|
-      %h4= event.title
-      .event_url= event.url
-      .event_description= event.description
-      .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
-      .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
+    .animated.bounceInLeft
+      %h1 Events for today
+      %h2.today Today is #{return_day(current_user.cohort.day_in_week_at_dbc)}
+      - @events_for_today.each do |event, event_time|
+        %h4= event.title
+        .event_url= event.url
+        .event_description= event.description
+        .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
+        .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
   .weeks_events
-    %h1 Events for the week
-    - @days.each do |day|
-      - @day_events = @events_for_week.select do |event, event_time|
-        - event_time.day == day
-      - unless @day_events.empty?
-        .day
-          %h3= return_day(day)
-          - @day_events.each do |event, event_time|
-            .week_event
-              %h4= event.title
-              .event_url= event.url
-              .event_description= event.description
-              .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
-              .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
+    .animated.bounceInRight
+      %h1 Events for the week
+      - @days.each do |day|
+        - @day_events = @events_for_week.select do |event, event_time|
+          - event_time.day == day
+        - unless @day_events.empty?
+          .day
+            %h3= return_day(day)
+            - @day_events.each do |event, event_time|
+              .week_event
+                %h4= event.title
+                .event_url= event.url
+                .event_description= event.description
+                .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
+                .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
 -else
   %h2 Welcome New Boot!
   %p When you are assigned a cohort your callender will be here.
