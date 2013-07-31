@@ -1,14 +1,15 @@
 -if current_user.cohort
-  .todays_events
-    .animated.bounceInLeft
+  .animated.bounceInLeft
+    .todays_events
       %h1 Events for today
-      %h2.today Today is #{day_of_week_name(current_user.cohort.day_in_week_at_dbc)}
-      - @events_for_today.each do |event, event_time|
-        %h4= event.title
-        .event_url= event.url
-        .event_description= event.description
-        .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
-        .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
+      .animated.bounceInUp
+        %h2.today Today is #{day_of_week_name(current_user.cohort.day_in_week_at_dbc)}
+        - @events_for_today.each do |event, event_time|
+          %h4= event.title
+          .event_url= event.url
+          .event_description= event.description
+          .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
+          .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
   .weeks_events
     .animated.bounceInRight
       %h1 Events for the week
@@ -25,6 +26,13 @@
                 .event_description= event.description
                 .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
                 .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
+  .todays_challenges
+    .animated.bounceInUp
+      %h1 Today's Challenges
+      .challenge
+        - @challenges_for_today.each do |challenge|
+          %h4.challenge_name= link_to "#{challenge.name}", challenge_path(challenge)
+
 -else
   %h2 Welcome New Boot!
   %p When you are assigned a cohort your callender will be here.
