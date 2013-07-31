@@ -4,6 +4,8 @@
       %h1 Events for today
       .animated.bounceInUp
         %h2.today Today is #{day_of_week_name(current_user.cohort.day_in_week_at_dbc)}
+        - if @events_for_today.empty?
+          %h4 No events for today :(
         - @events_for_today.each do |event, event_time|
           %h4= event.title
           .event_url= event.url
@@ -33,7 +35,8 @@
         .challenge
           - @challenges_for_today.each do |challenge|
             .challenge_name
-              %span.challenge_core= "#{'core' if challenge.required?}"
+              - if challenge.required?
+                %span.core_box= 'Core'
               %span.challenge_name=link_to "#{challenge.name}", challenge_path(challenge)
 
       -else
