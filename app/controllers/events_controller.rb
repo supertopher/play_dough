@@ -17,7 +17,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    p "love " * 90
     ap params
     @event = Event.create(params[:event])
     params[:phase_event].each do |phase, value|
@@ -26,8 +25,9 @@ class EventsController < ApplicationController
       end
     end
     event_times = params[:event_time]
-    start_time = Time.parse("#{event_times[:start_hour]}:#{event_times[:start_minute]}")
-    end_time = Time.parse("#{event_times[:end_hour]}:#{event_times[:end_minute]}")
+    start_time = Time.parse(event_times["start_time(4i)"] + ":" + event_times["start_time(5i)"])
+    ap start_time
+    end_time = Time.parse(event_times["end_time(4i)"] + ":" + event_times["end_time(5i)"])
 
 
     params[:week].each do |week_and_day, status|
