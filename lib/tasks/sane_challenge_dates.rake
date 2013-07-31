@@ -24,3 +24,19 @@ task set_days: :environment do
   end
   puts "Found and changed #{challenge_count} default_day now == level+1"
 end
+
+task set_phase: :environment do
+  # 1..8 there are no week 9 tasks
+  week_challenges = []
+  challenge_count = 0
+  week_counter = 0
+  (1..8).each do |this_week|
+    week_challenges = Challenge.find_all_by_default_week(this_week)
+    challenge_count += week_challenges.count
+    week_challenges.each do |this_challenge|
+      week_counter = ((this_week-1)/3)+1
+      this_challenge.update_attribute(:phase, Phase.find(week_counter))
+    end
+    puts "Found and changed #{challenge_count} phases in week #{this_week} set to phase #{week_counter}"
+  end
+end
