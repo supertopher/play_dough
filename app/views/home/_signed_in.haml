@@ -2,7 +2,7 @@
   .todays_events
     .animated.bounceInLeft
       %h1 Events for today
-      %h2.today Today is #{return_day(current_user.cohort.day_in_week_at_dbc)}
+      %h2.today Today is #{day_of_week_name(current_user.cohort.day_in_week_at_dbc)}
       - @events_for_today.each do |event, event_time|
         %h4= event.title
         .event_url= event.url
@@ -17,7 +17,7 @@
           - event_time.day == day
         - unless @day_events.empty?
           .day
-            %h3= return_day(day)
+            %h3= day_of_week_name(day)
             - @day_events.each do |event, event_time|
               .week_event
                 %h4= event.title

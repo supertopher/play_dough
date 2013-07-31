@@ -26,7 +26,7 @@
 /     -if this_challenge.required
 /       %p Level: #{this_challenge.level}
 /     -if this_challenge.default_day
-/       %p Day of Week: #{return_day(this_challenge.default_day)}
+/       %p Day of Week: #{day_of_week_name(this_challenge.default_day)}
 /     %span Created: #{time_ago_in_words(this_challenge.created_at)} ago.
 /     -unless this_challenge.created_at == this_challenge.updated_at
 /       %span Last Updated: #{time_ago_in_words(this_challenge.updated_at)} ago.
