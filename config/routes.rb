@@ -5,6 +5,7 @@ PlayDough::Application.routes.draw do
   resources   :events
   resources   :challenges, :comments
   # get 'upvote' => 'comments#upvote'
+  post '/challenge_attempts' => 'challenge_attempts#create'
   resources   :cohorts
   devise_for  :users, :controllers => { :registration => "registrations" }
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

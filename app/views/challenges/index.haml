@@ -11,6 +11,8 @@
           -if this_challenge.required
             .true_box Core
           =link_to this_challenge.name, challenge_path(this_challenge)
+          - if this_challenge.challenge_attempts.where(user_id: current_user.id, challenge_id: this_challenge.id).present?
+            .animated.challenge_complete{class: "fadeIn#{@random_animation.sample}"}= 'Completed :D'
   -else
     %h1 Enjoy Your Day. Challenge yourself.  Breathe.
 #right_nav

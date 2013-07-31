@@ -1,5 +1,10 @@
 .this_challenge
   %h1=@challenge.name
+  = form_tag '/challenge_attempts', method: 'post' do
+    = hidden_field_tag :challenge_id, @challenge.id
+    = label_tag :url, "Attempt url goes here:"
+    = text_field_tag :url, nil, class: 'form_control'
+    = submit_tag "Submit Challenge", class: 'submit_challenge_button'
   %h3.day_of_week For #{day_of_week_name(@challenge.default_day)}
   -if @challenge.required
     .true_box Core

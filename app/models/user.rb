@@ -28,6 +28,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :cohort, :staff, :name
   belongs_to :cohort
   has_many :comments
-  has_many :challenge_attemps
+  has_many :challenge_attempts
 
 end

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731174418) do
+ActiveRecord::Schema.define(:version => 20130731210821) do
+
+  create_table "challenge_attempts", :force => true do |t|
+    t.string  "url"
+    t.integer "challenge_id"
+    t.integer "user_id"
+  end
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
