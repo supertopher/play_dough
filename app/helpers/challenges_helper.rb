@@ -1,5 +1,6 @@
 module ChallengesHelper
-  def return_day(day_of_week)
+  # TODO-JW: Consider using Date::DAYNAMES
+  def day_of_week_name(day_of_week)
     # monday == 1, tuesday == 2
     day_array = [
       "Monday",
