@@ -1,0 +1,33 @@
+ $accent: #999999;
+
+.comment_karma{
+  color: $accent;
+  float: right;
+  display: inline-block;
+}
+
+.created_and_updated{
+  color: $accent;
+}
+
+.comment_email{
+  display: inline-block;
+  color: $accent;
+  margin: 0.25em auto auto auto;
+}
+
+.upvote{
+  height: 0.75em;
+
+}
+.downvote{
+  height: 0.75em;
+
+}
+
+  .active{
+
+  }
+  .inactive{
+    opacity: 50%;
+  }

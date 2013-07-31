@@ -18,7 +18,11 @@
     -@challenge.comments.each do |this_comment|
       .single_comment
         =markdown(this_comment.body).html_safe
-        .comment_email= this_comment.user.email
+        .comment_email=this_comment.user.email
+        .comment_karma
+          =link_to image_tag("upvote.gif", class: "upvote"), remote: true
+          =image_tag "downvote.gif", class: "downvote"
+          Karma: #{this_comment.karma}
         %hr
   .new_comment_form
     Comments use markdown
