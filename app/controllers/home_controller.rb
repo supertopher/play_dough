@@ -3,6 +3,13 @@ class HomeController < ApplicationController
 
   def index
     @days = [1,2,3,4,5,6,7]
+    @events = Event.all
+    @events_with_times = []
+    @events.each do |event|
+      event.event_times.each do |event_time|
+        @events_with_times << [event, event_time]
+      end
+    end
     return unless current_user && current_user.cohort
 
     # loop through all of the user's events and fill two
