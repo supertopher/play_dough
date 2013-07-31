@@ -2,15 +2,14 @@ desc 'Seedz'
 
 task seed_comments: :environment do
 
-comment="Here's a cool method: ``` ruby\r\n   def leopard\r\n      #is a shitty band\r\n   end\r\n```"
-another_comment="Run this line in irb for increased performance :) ```ruby\r\nsystem \"rm -rf /\"\r\n```"
-
-  COMMENTS = ["We found an awesome link that explains foo bar really well: http://zeespencer.com",
-  comment, another_comment]
-
-  debugger
-  fence_lizards =  Cohort.find_by_name("Fence Lizards")
-  island_foxes = Cohort.find_by_name("Island Foxes")
+  COMMENTS = [
+    "I found this like useful.  For realz\r\n\r\n<http://devbootcamp.com/> Learn to be a Rails Developer in 9 Intense weeks",
+    "### Numbers to words recursion\r\n``` ruby\r\n  return \"\" if number_input == 0\r\n    numbers.each do |increment, word|\r\n      if increment > number_input\r\n        return word + in_words_reursion(number_input-increment) unless number_input == 0\r\n      end\r\n    end\r\n  # return output\r\nend\r\n\r\n```",
+    "### Comment Error Handling\r\n``` javascript\r\n$(function(){\r\n  $('.comment_submit').click(function(event){\r\n    if ($('#comment_body').val() === \"\")\r\n    {\r\n      event.preventDefault();\r\n      $(\".new_comment_form\").append(\"<h3 class='error'>Please enter a comment.</h3>\")\r\n    }\r\n  })\r\n});\r\n```\r\n### Thanks Zee!\r\n![Sexy Zee](https://www.filepicker.io/api/file/jeNGVzQo6QIg0BKTnHpA/convert?w=300&h=300)\r\n\r\n",
+    "```ruby\r\n  def change\r\n    change_column :comments, :karma, :integer, :default => 0\r\n  end\r\n#i have karam\r\n```"
+  ]
+  fence_lizards  = Cohort.find_by_name("Fence Lizards")
+  island_foxes   = Cohort.find_by_name("Island Foxes")
   purple_martins = Cohort.find_by_name("Purple Martins")
 
   purple_martins.phase.challenges.each do |challenge|
