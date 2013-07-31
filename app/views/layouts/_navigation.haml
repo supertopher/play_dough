@@ -4,12 +4,13 @@
   %span.white_bar
   %span.white_bar
   = link_to 'PlayDough', root_path, class: "logo"
+  .logged_in_name= current_user.email if current_user
   %span{class: "right_side_nav_links"}
     - if current_user
       = link_to 'Challenges ', challenges_path
         - if current_user.staff == true
         = link_to 'Create Event ', new_event_path
-        = link_to 'Create Phase ', new_phase_path
+        = link_to 'Phases ', phases_path
         = link_to 'Cohorts ', cohorts_path
       = link_to('Logout', destroy_user_session_path, :method => :delete)
     - else

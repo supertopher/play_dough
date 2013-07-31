@@ -1,0 +1,8 @@
+%h1 Phases
+= link_to "Create a new phase", new_phase_path
+%br
+%br
+%br
+- @phases.each do |phase|
+  = link_to "Phase #{phase.number} in #{phase.location}", phase_path(phase)
+  %br

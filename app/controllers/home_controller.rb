@@ -8,6 +8,8 @@ class HomeController < ApplicationController
     # loop through all of the user's events and fill two
     # arrays, one for the day and one for the week
     phase_time = current_user.cohort.current_phase_day
+    phase_day = phase_time.last
+    phase_week = phase_time.first
     @events_for_today = []
     @events_for_week = []
     current_user.cohort.phase.events.each do |event|
@@ -21,6 +23,8 @@ class HomeController < ApplicationController
         end
       end
     end
+
+    @challenges_for_today = current_user.cohort.phase.challenges.where(default_week: phase_week, default_day: phase_day)
   end
 
   def show

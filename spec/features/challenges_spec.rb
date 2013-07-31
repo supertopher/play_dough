@@ -63,6 +63,22 @@ describe "challenges" do
       click_link("Back to Challenges Home")
       current_path.should == challenges_path
     end
+
+    it "should have a comment box" do
+      visit challenge_path(challenge)
+      page.should have_css('#comment_body')
+    end
+
+    it "should show an error on page when a user attemps to post a blank comment", js: true do
+      visit challenge_path(challenge)
+      click_button "Create Comment"
+      page.should have_content("Please enter a comment.")
+    end
+
+    it "should show a submitted comment" do
+      visit challenge_path(challenge)
+      fill_in "comment[body]", with: "I found this link useful: http://memeoverflow.com"
+    end
   end
 
   context "creating a new challenge" do
