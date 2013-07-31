@@ -36,8 +36,7 @@ describe "Students" do
   end
 
   it "should show a students daily challenges" do
-    pending
     visit challenges_path
-
+    page.has_content?(challenge.name)
   end
 end
