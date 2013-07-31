@@ -1,13 +1,10 @@
-<h2>Time Of The Event</h2>
-<% @event.event_times.each do |event| %>
-	<p><%= f.label :start_time %></p>
-	<p><%= f.text_field :start_time,  :value => event.start_time %></p>
-	<p><%= f.label :end_time %></p>
-	<p><%= f.text_field :end_time,  :value => event.end_time %><p/>
-<h2>Days Of The Event</h2>		
-	<p><%= f.label :week %> <br/>
-	<p><%= f.text_field :week, :value => event.week %><p/>
-	<p><%= f.label :day %><br/>
-	<p><%= f.text_field :day, :value => event.day %><p/>
+<h2>Current Events</h2>
+<% @all_events.each do |event| %>
+	<p><%= event.title %></p>
+	<p><%= event.description %></p>
+	<p><%= event.url %><p/>
+	<p><%= link_to "Delete This Event", {:action=>'destroy', :id=>event.id}, :confirm=>"Are you sure", :method=>'delete' %>
 <% end %> 
 
+
+<!-- {:action=>'destroy', :id=>@discussion}, :confirm=>"Are you sure", :method=>'delete' -->

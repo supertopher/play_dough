@@ -41,3 +41,21 @@ describe "Students" do
 
   end
 end
+
+### This is for admin users
+
+describe 'Admin User' do
+  let!(:admin) { FactoryGirl.create(:admin) } 
+  context "admin logged in" do
+    before(:each) do
+      visit root_path
+      fill_in 'user[email]',                  with: admin.email
+      fill_in 'user[password]',               with: admin.password
+      click_button('Sign in')
+    end
+
+    it "Shows a logged in staff member the create an event page" do
+      page.should have_link('Create Event')
+    end
+  end
+end
