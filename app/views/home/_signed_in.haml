@@ -32,7 +32,10 @@
         %h1 Today's Challenges
         .challenge
           - @challenges_for_today.each do |challenge|
-            %h4.challenge_name= link_to "#{challenge.name}", challenge_path(challenge)
+            .challenge_name
+              %span.challenge_core= "#{'core' if challenge.required?}"
+              %span.challenge_name=link_to "#{challenge.name}", challenge_path(challenge)
+
       -else
         %h1 No Challenges Today :)
         Breathe.
@@ -44,10 +47,11 @@
     - (1..3).each do |week|
       %h3.week_number= "Week #{week}"
       - @days.each do |day|
+        %h4.day_number= "#{day_of_week_name(day)}:" if @events_with_times.any? {|event, event_time| event_time.day == day && event_time.week == week}
         - @events_with_times.each do |event, event_time|
           - if event_time.week == week && event_time.day == day
             .event
-              %h4= event.title
+              %h5= event.title
               .event_url= event.url
               .event_description= event.description
               .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
