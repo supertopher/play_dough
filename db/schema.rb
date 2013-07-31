@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730204334) do
+ActiveRecord::Schema.define(:version => 20130730220143) do
 
   create_table "challenges", :force => true do |t|
     t.integer  "actor_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130730204334) do
   create_table "cohorts", :force => true do |t|
     t.string  "name"
     t.string  "year"
-    t.string  "start_date"
+    t.date    "start_date"
     t.integer "phase_id"
     t.string  "current_phase_day"
   end
@@ -112,8 +112,9 @@ ActiveRecord::Schema.define(:version => 20130730204334) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.boolean  "staff"
     t.integer  "cohort_id"
+    t.boolean  "staff"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
