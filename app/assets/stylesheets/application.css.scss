@@ -23,7 +23,10 @@ html{
 body{
   margin: 0;
 }
-
+.logged_in_name{
+  display: inline-block;
+  color: $accent;
+}
 .intro_block{
   display: block;
   // padding:1px;
