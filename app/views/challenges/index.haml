@@ -3,15 +3,18 @@
     =link_to "Create a New Challenge", new_challenge_path
 
 #challenge_index
-  %h1 Today's Challenges
-  -@challenge_list.each do |this_required|
-    -this_required.each do |this_challenge|
-      .each_challenge_link
-        -if this_challenge.required
-          .true_box Core
-        -else
-          .false_box Optional
-        =link_to this_challenge.name, challenge_path(this_challenge)
+  -if @challenge_list
+    %h1 Today's Challenges
+    -@challenge_list.each do |this_required|
+      -this_required.each do |this_challenge|
+        .each_challenge_link
+          -if this_challenge.required
+            .true_box Core
+          -else
+            .false_box Optional
+          =link_to this_challenge.name, challenge_path(this_challenge)
+  -else
+    %h1 Enjoy Your Day. Challenge yourself.  Breathe.
 #right_nav
   =link_to image_tag("/assets/xk.png", :title => "XKCD: Humor for Nerdy Smart People (us)"), "http://xkcd.com"
   #challenge_heads_up

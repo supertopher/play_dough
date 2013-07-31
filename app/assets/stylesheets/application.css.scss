@@ -111,9 +111,18 @@ nav{
   }
 }
 
+.day_of_week{
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
 .main{
   margin: auto;
   width: 80%;
+}
+
+.created_and_updated{
+  color: $accent;
 }
 
 .comment_email{

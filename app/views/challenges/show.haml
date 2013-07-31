@@ -1,14 +1,14 @@
 .this_challenge
   %h1=@challenge.name
-  %h3 For #{day_of_week_name(@challenge.default_day)}
+  %h3.day_of_week For #{day_of_week_name(@challenge.default_day)}
   -if @challenge.required
     .true_box Core
   -else
     .false_box Optional
-  %p Created: #{time_ago_in_words(@challenge.created_at)} ago.
-  -unless @challenge.created_at == @challenge.updated_at
-    %p Updated: #{time_ago_in_words(@challenge.updated_at)} ago.
-  %h2 Title: #{@challenge.name}
+  .created_and_updated
+    %p Created: #{time_ago_in_words(@challenge.created_at)} ago.
+    -unless @challenge.created_at == @challenge.updated_at
+      %p Updated: #{time_ago_in_words(@challenge.updated_at)} ago.
   %p.description=markdown(@challenge.description).html_safe
   .edit_link=link_to "Edit this Challenge", edit_challenge_path if current_user.staff
   .link_back=link_to "Back to Challenges Home", challenges_path
