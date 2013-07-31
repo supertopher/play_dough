@@ -9,7 +9,7 @@
       -this_required.each do |this_challenge|
         .each_challenge_link
           -if this_challenge.required
-            .true_box Core
+            .animated.true_box{class: "fadeIn#{@random_animation.sample}"} Core
           =link_to this_challenge.name, challenge_path(this_challenge)
           - if this_challenge.challenge_attempts.where(user_id: current_user.id, challenge_id: this_challenge.id).present?
             .animated.challenge_complete{class: "fadeIn#{@random_animation.sample}"}= 'Completed :D'
