@@ -63,6 +63,11 @@ describe "challenges" do
       click_link("Back to Challenges Home")
       current_path.should == challenges_path
     end
+
+    it "should have a comment box" do
+      visit challenge_path(challenge)
+      page.should have_css('#comment_body')
+    end
   end
 
   context "creating a new challenge" do
