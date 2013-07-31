@@ -329,6 +329,7 @@ code{
   }
 }
 
+<<<<<<< HEAD
 .core_box {
   font-size: 0.75em;
   border:none 5px #000000;
@@ -350,6 +351,26 @@ code{
   padding: .5em;
 }
 
+=======
+.this_event{
+  margin-top: 1em;
+  padding: 1em;
+  -moz-box-shadow:inset -3px 2px 6px #000000;
+  -webkit-box-shadow:inset -3px 2px 6px #000000;
+  box-shadow:inset -3px 2px 6px #000000;
+  float: left;
+  width: 55%;
+}
+
+.event_comment_area{
+  margin-top: 2em;
+  float: right;
+  width: 40%;
+  display: block;
+}
+
+
+>>>>>>> ability to delete an event
 
 // footer {
 //   clear:both;

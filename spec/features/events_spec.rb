@@ -29,6 +29,15 @@ describe 'Events' do
 			click_link 'Create Event'
 			page.should have_content('Add an Event to the Boot Calender')
 		end
+
+		it "should create a an event" do
+			click_link 'Create Event'
+			fill_in 'event[title]',   		with: event.title
+			fill_in 'event[description',  with: event.description
+			fill_in 'event[url]'          with: event.url
+			click_button('Create Event')
+		end
+		
 	end
 end
 
