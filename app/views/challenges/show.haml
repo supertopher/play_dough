@@ -1,14 +1,16 @@
 .this_challenge
-  %h1 This is the challenges show page
-  %p Actor ID: #{@challenge.actor_id}
-  %p Core?: #{@challenge.required}
-  %p Level: #{@challenge.level}
-  %p Created: #{time_ago_in_words(@challenge.created_at)} ago.
-  -unless @challenge.created_at == @challenge.updated_at
-    %p Updated: #{time_ago_in_words(@challenge.updated_at)} ago.
-  %h2 Title: #{@challenge.name}
+  %h1=@challenge.name
+  %h3.day_of_week For #{day_of_week_name(@challenge.default_day)}
+  -if @challenge.required
+    .true_box Core
+  -else
+    .false_box Optional
+  .created_and_updated
+    %p Created: #{time_ago_in_words(@challenge.created_at)} ago.
+    -unless @challenge.created_at == @challenge.updated_at
+      %p Updated: #{time_ago_in_words(@challenge.updated_at)} ago.
   %p.description=markdown(@challenge.description).html_safe
-  .edit_link=link_to "Edit this Challenge", edit_challenge_path
+  .edit_link=link_to "Edit this Challenge", edit_challenge_path if current_user.staff
   .link_back=link_to "Back to Challenges Home", challenges_path
 .challenge_comment_area
   %h2 Discussion
@@ -22,5 +24,8 @@
     Comments use markdown
     = form_for @comment do |f|
       = hidden_field_tag :challenge_id, @challenge.id
-      = f.text_area :body, cols: 60, rows: 5
+      = f.text_area :body, cols: 60, rows: 5, class: 'text_area'
       = f.submit class: "comment_submit"
+  <hr>
+  %h3 Live Comment Preview
+  .live_preview

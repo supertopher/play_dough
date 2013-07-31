@@ -28,11 +28,13 @@ describe "challenges" do
     end
 
     it "should display a challenge in the database" do
+      pending "Database phase?"
       visit challenges_path
       page.should have_content(challenge.name)
     end
 
     it "should link to show page from first title link" do
+      pending "Database phase?"
       visit challenges_path
       click_link challenge.name
       current_path.should == challenge_path(challenge)
@@ -52,7 +54,8 @@ describe "challenges" do
       page.should have_content(challenge.name)
     end
 
-    it "should have a working link to edit page" do
+    it "should have a working link to edit page for staff" do
+      user.update_attribute(:staff, true)
       visit challenge_path(challenge)
       click_link("Edit this Challenge")
       current_path.should == edit_challenge_path(challenge)
