@@ -20,7 +20,13 @@ class Cohort < ActiveRecord::Base
   belongs_to :phase
 
   def current_phase_day
-    [week_at_dbc, day_in_week_at_dbc]
+    phase_time = [week_at_dbc, day_in_week_at_dbc]
+    if phase.number == 2
+      phase_time[0] = phase_time.first - 3
+    elsif phase.number == 3
+      phase_time[0] = phase_time.first - 6
+    end
+    phase_time
   end
 
   def expired?
