@@ -8,7 +8,7 @@
   <p>Description: </p>
     <p><%= f.text_area :description, :placeholder => "Learn Why your superego Hates you."  %></p>
    <p>URL: <%= f.text_field :url, :placeholder => "Reddit.com"  %></p>
-   
+
 
   <p><%= f.fields_for :phase_events do |phase_event_form|  %></p>
         <% @phases.each do |phase_array| %>
@@ -23,9 +23,7 @@
 
   <% end %>
 
-  <p><%# f.fields_for :event_time do |event_time|  %></p>
-    <%# render "event_times", :f => event_time %>
-  <%# end %>
+  <p>
 
   <p><%= f.submit %></p>
 <% end %>

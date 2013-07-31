@@ -1,12 +1,3 @@
-<!-- <p><%= f.label :PublishTime, "Start Time" %></p>
-<p><%= f.text_field :attributeunknowwithformr %><p/>
-<p><%= f.label :EndPublishTime, "End Time" %></p>
-<p><%= f.text_field :attributeunknowwithformr %><p/>
-
- -->
-
-
-
 <table class="day_picker">
 <% (1..3).each do |week_num| %>
 <tr>
@@ -21,21 +12,10 @@
 </table>
 
 <p>Start Time</p>
-    <%# select_time(Time.now)  %>
 
-<%= text_field(:event_time, :start_hour, size: 5) %>:
-<%= text_field(:event_time, :start_minute, size: 8) %>
+<%= time_select(:event_time, :start_time, {:minute_step => 15, ampm: true, :default => {:hour => '9', :minute => '00'}}) %>
 
-<%# time_select 'event_time', 'lovestart_event_time', {:ampm => true} %>
 
 <p>End Time</p>
 
-<%= text_field(:event_time, :end_hour, size: 5) %>:
-<%= text_field(:event_time, :end_minute, size: 8) %>
-
-
-    <%# select_time(Time.now)  %>
-
-
-<%# time_select 'event_time', 'loveend_event_time', {:ampm => true} %>
-
+<%= time_select(:event_time, :end_time, {:minute_step => 15, ampm: true, :default => {:hour => '10', :minute => '00'}}) %>
