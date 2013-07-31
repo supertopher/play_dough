@@ -14,9 +14,9 @@
  */
 
 
-$accent: #999999;
+ $accent: #999999;
 
-html{
+ html{
   font-family: 'Droid Sans', sans-serif;
 }
 
@@ -127,6 +127,9 @@ code{
 
 .text_area{
   width: 90%;
+}
+
+.edit_input{
   height: 55em;
 }
 
@@ -216,44 +219,44 @@ code{
   }
 
   .true_box{
-  font-size: 0.75em;
-  border:none 5px #000000;
-  -moz-border-radius-topleft: 45px;
-  -moz-border-radius-topright:45px;
-  -moz-border-radius-bottomleft:46px;
-  -moz-border-radius-bottomright:45px;
-  -webkit-border-top-left-radius:45px;
-  -webkit-border-top-right-radius:45px;
-  -webkit-border-bottom-left-radius:46px;
-  -webkit-border-bottom-right-radius:45px;
-  border-top-left-radius:45px;
-  border-top-right-radius:45px;
-  border-bottom-left-radius:46px;
-  border-bottom-right-radius:45px;
-  background-color: #B61D0C;
-  color: white;
-  display: inline-block;
-}
-
-.false_box{
-  font-size: 0.75em;
+    font-size: 0.75em;
     border:none 5px #000000;
-  -moz-border-radius-topleft: 45px;
-  -moz-border-radius-topright:45px;
-  -moz-border-radius-bottomleft:46px;
-  -moz-border-radius-bottomright:45px;
-  -webkit-border-top-left-radius:45px;
-  -webkit-border-top-right-radius:45px;
-  -webkit-border-bottom-left-radius:46px;
-  -webkit-border-bottom-right-radius:45px;
-  border-top-left-radius:45px;
-  border-top-right-radius:45px;
-  border-bottom-left-radius:46px;
-  border-bottom-right-radius:45px;
-  background-color: #31B60C;
-  color: white;
-  display: inline-block;
-}
+    -moz-border-radius-topleft: 45px;
+    -moz-border-radius-topright:45px;
+    -moz-border-radius-bottomleft:46px;
+    -moz-border-radius-bottomright:45px;
+    -webkit-border-top-left-radius:45px;
+    -webkit-border-top-right-radius:45px;
+    -webkit-border-bottom-left-radius:46px;
+    -webkit-border-bottom-right-radius:45px;
+    border-top-left-radius:45px;
+    border-top-right-radius:45px;
+    border-bottom-left-radius:46px;
+    border-bottom-right-radius:45px;
+    background-color: #B61D0C;
+    color: white;
+    display: inline-block;
+  }
+
+  .false_box{
+    font-size: 0.75em;
+    border:none 5px #000000;
+    -moz-border-radius-topleft: 45px;
+    -moz-border-radius-topright:45px;
+    -moz-border-radius-bottomleft:46px;
+    -moz-border-radius-bottomright:45px;
+    -webkit-border-top-left-radius:45px;
+    -webkit-border-top-right-radius:45px;
+    -webkit-border-bottom-left-radius:46px;
+    -webkit-border-bottom-right-radius:45px;
+    border-top-left-radius:45px;
+    border-top-right-radius:45px;
+    border-bottom-left-radius:46px;
+    border-bottom-right-radius:45px;
+    background-color: #31B60C;
+    color: white;
+    display: inline-block;
+  }
 }
 
 .each_challenge_link{
