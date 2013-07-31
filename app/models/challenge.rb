@@ -21,4 +21,5 @@ class Challenge < ActiveRecord::Base
                    :name, :required, :default_day, :default_week
   belongs_to :phase
   has_many :comments
+  has_many :challenge_attempts
 end
