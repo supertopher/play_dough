@@ -23,6 +23,8 @@ html{
 body{
   margin: 0;
 }
+
+
 .logged_in_name{
   display: inline-block;
   color: $accent;
@@ -184,6 +186,8 @@ code{
     padding-top: 0;
   }
 
+
+
   :nth-child(even){
     padding: 0.5em;
     background-color: #F5F5F5;
@@ -210,6 +214,46 @@ code{
       text-decoration: underline;
     }
   }
+
+  .true_box{
+  font-size: 0.75em;
+  border:none 5px #000000;
+  -moz-border-radius-topleft: 45px;
+  -moz-border-radius-topright:45px;
+  -moz-border-radius-bottomleft:46px;
+  -moz-border-radius-bottomright:45px;
+  -webkit-border-top-left-radius:45px;
+  -webkit-border-top-right-radius:45px;
+  -webkit-border-bottom-left-radius:46px;
+  -webkit-border-bottom-right-radius:45px;
+  border-top-left-radius:45px;
+  border-top-right-radius:45px;
+  border-bottom-left-radius:46px;
+  border-bottom-right-radius:45px;
+  background-color: #B61D0C;
+  color: white;
+  display: inline-block;
+}
+
+.false_box{
+  font-size: 0.75em;
+    border:none 5px #000000;
+  -moz-border-radius-topleft: 45px;
+  -moz-border-radius-topright:45px;
+  -moz-border-radius-bottomleft:46px;
+  -moz-border-radius-bottomright:45px;
+  -webkit-border-top-left-radius:45px;
+  -webkit-border-top-right-radius:45px;
+  -webkit-border-bottom-left-radius:46px;
+  -webkit-border-bottom-right-radius:45px;
+  border-top-left-radius:45px;
+  border-top-right-radius:45px;
+  border-bottom-left-radius:46px;
+  border-bottom-right-radius:45px;
+  background-color: #31B60C;
+  color: white;
+  display: inline-block;
+}
 }
 
 .each_challenge_link{
@@ -244,6 +288,7 @@ code{
     color: red;
   }
 }
+
 
 // footer {
 //   clear:both;
