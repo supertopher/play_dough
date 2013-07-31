@@ -93,3 +93,4 @@ phase_1.events.push(yoga, mentor_night, engineering_empathy, graduation, friday_
 phase_2.events.push(engineering_empathy, graduation, friday_check_in)
 phase_3.events.push(engineering_empathy, graduation, friday_check_in)
 phase_4.events.push(engineering_empathy, graduation, friday_check_in)
+

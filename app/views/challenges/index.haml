@@ -10,8 +10,6 @@
         .each_challenge_link
           -if this_challenge.required
             .true_box Core
-          -else
-            .false_box Optional
           =link_to this_challenge.name, challenge_path(this_challenge)
   -else
     %h1 Enjoy Your Day. Challenge yourself.  Breathe.

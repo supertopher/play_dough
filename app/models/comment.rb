@@ -14,5 +14,5 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :challenge
-  attr_accessible :body, :karma
+  attr_accessible :body, :karma, :user, :challenge
 end
