@@ -4,6 +4,7 @@
   %span.white_bar
   %span.white_bar
   = link_to 'PlayDough', root_path, class: "logo"
+  .logged_in_name= current_user.email if current_user
   %span{class: "right_side_nav_links"}
     - if current_user
       = link_to 'Challenges ', challenges_path

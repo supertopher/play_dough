@@ -28,10 +28,14 @@
                 .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
   .todays_challenges
     .animated.bounceInUp
-      %h1 Today's Challenges
-      .challenge
-        - @challenges_for_today.each do |challenge|
-          %h4.challenge_name= link_to "#{challenge.name}", challenge_path(challenge)
+      - unless @challenges_for_today.empty?
+        %h1 Today's Challenges
+        .challenge
+          - @challenges_for_today.each do |challenge|
+            %h4.challenge_name= link_to "#{challenge.name}", challenge_path(challenge)
+      -else
+        %h1 No Challenges Today :)
+        Breathe.
 
 -else
   %h1 All Events
