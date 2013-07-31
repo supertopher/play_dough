@@ -14,9 +14,11 @@
 ActiveRecord::Schema.define(:version => 20130731210821) do
 
   create_table "challenge_attempts", :force => true do |t|
-    t.string  "url"
-    t.integer "challenge_id"
-    t.integer "user_id"
+    t.string   "url"
+    t.integer  "challenge_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "challenges", :force => true do |t|

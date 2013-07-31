@@ -4,6 +4,7 @@ class CreateChallengeAttempts < ActiveRecord::Migration
       t.string :url
       t.belongs_to :challenge
       t.belongs_to :user
+      t.timestamps
     end
   end
 end

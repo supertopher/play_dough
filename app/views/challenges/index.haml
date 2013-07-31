@@ -5,6 +5,7 @@
 #challenge_index
   -if @challenge_list
     %h1 Today's Challenges
+    %h4 (Click the green completed boxes to view your attempts)
     -@challenge_list.each do |this_required|
       -this_required.each do |this_challenge|
         .each_challenge_link
@@ -12,7 +13,7 @@
             .animated.true_box{class: "fadeIn#{@random_animation.sample}"} Core
           =link_to this_challenge.name, challenge_path(this_challenge)
           - if this_challenge.challenge_attempts.where(user_id: current_user.id, challenge_id: this_challenge.id).present?
-            .animated.challenge_complete{class: "fadeIn#{@random_animation.sample}"}= 'Completed :D'
+            .animated.challenge_complete{class: "fadeIn#{@random_animation.sample}"}= link_to 'Completed :D', challenge_attempt_path(this_challenge)
   -else
     %h1 Enjoy Your Day. Challenge yourself.  Breathe.
 #right_nav

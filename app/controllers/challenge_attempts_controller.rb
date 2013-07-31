@@ -9,4 +9,9 @@ class ChallengeAttemptsController < ApplicationController
       redirect_to request.referrer
     end
   end
+
+  def show
+    @challenge_attempts = ChallengeAttempt.where(user_id: current_user.id, challenge_id: params[:id])
+    @challenge = Challenge.find(params[:id])
+  end
 end
