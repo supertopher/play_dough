@@ -16,7 +16,8 @@ end
 
 describe "log in / log out / sign up" do
 let!(:user) { FactoryGirl.create(:user) }
-  # denied for actual user auth
+
+  # denied for devboot's actual user setup
   # it "should allow a user to create an account from users/sign_up" do
   #   visit '/users/sign_up'
   #   within('.main') do
