@@ -13,4 +13,13 @@ module ChallengesHelper
     ]
     day_array[(day_of_week-1)]
   end
+
+  def markdown(text)
+    markdown = Redcarpet::Markdown.new(
+        Pygmentize.new(:filter_html => true, :hard_wrap => true),
+        :fenced_code_blocks => true,
+        :autolink => true
+        )
+    markdown.render(text).html_safe
+  end
 end

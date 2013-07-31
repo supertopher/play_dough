@@ -20,6 +20,8 @@ gem 'debugger'
 
 # markdown parsing
 gem 'redcarpet'
+gem "pygments.rb"
+gem 'markdown-rails'
 
 #bootstrap 3.0rc1
 # gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
