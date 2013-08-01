@@ -44,7 +44,7 @@ end
 ### This is for admin users
 
 describe 'Admin User' do
-  let!(:admin) { FactoryGirl.create(:admin) } 
+  let!(:admin) { FactoryGirl.create(:admin) }
   context "admin logged in" do
     before(:each) do
       visit root_path

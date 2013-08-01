@@ -5,7 +5,6 @@
 #challenge_index
   -if @challenge_list
     %h1 Today's Challenges
-    %h4 (Click the green completed boxes to view your attempts)
     -@challenge_list.each do |this_required|
       -this_required.each do |this_challenge|
         .each_challenge_link

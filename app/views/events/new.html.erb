@@ -19,9 +19,8 @@
       <% end %>
 
 
-  <p><%= f.fields_for :event_time do |event_time|  %></p>
-    <%= render "event_times", :f => event_time %>
-
+  <p><% f.fields_for :event_time do |event_time|  %></p>
+    <% render "event_times", :f => event_time %>
   <% end %>
 
   <p>
@@ -30,6 +29,4 @@
 <% end %>
 </div>
 <br/>
-<div class="event_comment_area">
-   <%= render "event_times_edit" %>
-</div>
+

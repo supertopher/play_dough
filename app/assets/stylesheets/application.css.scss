@@ -22,7 +22,7 @@
 
 body{
   margin: 0;
-  background-image: url('/assets/squairy_light.png')
+  background-image: url('/assets/wall4.png')
 }
 
 
@@ -54,7 +54,6 @@ body{
     width: 85%;
     display: block;
     margin: auto;
-    background-color: white;
     height: em;
     // line-height: 7em;
   }
@@ -190,6 +189,10 @@ code{
   float: right;
   width: 40%;
   display: block;
+  img{
+    max-width: 300px;
+    max-height: 300px;
+  }
 }
 
 .challenge_nav{
@@ -363,15 +366,39 @@ code{
   width: 55%;
 }
 
-.event_comment_area{
+.event_remove{
   margin-top: 1em;
   float: right;
   width: 40%;
   display: block;
 }
 
+.delete_event {
+  font-size: 0.75em;
+  border:none 5px #000000;
+  -moz-border-radius-topleft: 45px;
+  -moz-border-radius-topright:45px;
+  -moz-border-radius-bottomleft:46px;
+  -moz-border-radius-bottomright:45px;
+  -webkit-border-top-left-radius:45px;
+  -webkit-border-top-right-radius:45px;
+  -webkit-border-bottom-left-radius:46px;
+  -webkit-border-bottom-right-radius:45px;
+  border-top-left-radius:45px;
+  border-top-right-radius:45px;
+  border-bottom-left-radius:46px;
+  border-bottom-right-radius:45px;
+  background-color: #B61D0C;
+  color: white;
+  display: inline-block;
+  padding: .5em;
+}
 
+.delete_event a {
+  color:white;
+  text-decoration: none;
 
+}
 
 // footer {
 //   clear:both;
