@@ -22,7 +22,7 @@
 
 body{
   margin: 0;
-  background-image: url('/assets/squairy_light.png')
+  background-image: url('/assets/wall4.png')
 }
 
 
@@ -54,7 +54,6 @@ body{
     width: 85%;
     display: block;
     margin: auto;
-    background-color: white;
     height: em;
     // line-height: 7em;
   }
@@ -363,7 +362,7 @@ code{
   width: 55%;
 }
 
-.event_comment_area{
+.event_remove{
   margin-top: 1em;
   float: right;
   width: 40%;
