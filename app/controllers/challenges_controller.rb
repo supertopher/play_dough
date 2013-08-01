@@ -10,6 +10,7 @@ class ChallengesController < ApplicationController
         @events_with_times << [event, event_time]
       end
     end
+    @recently_completed_challenges = ChallengeAttempt.all.limit(10) if current_user.staff
     return unless current_user && current_user.cohort
     @random_animation = ["Left", "Right"]
     # loop through all of the user's events and fill two

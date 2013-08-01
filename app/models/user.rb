@@ -17,6 +17,7 @@
 #  updated_at             :datetime         not null
 #  cohort_id              :integer
 #  staff                  :boolean
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
