@@ -34,6 +34,7 @@ class HomeController < ApplicationController
     cores = @challenges_for_today.select {|c| c.required? }
     non_cores = @challenges_for_today - cores
     @challenges_for_today = cores + non_cores
+    
   end
 
   def show

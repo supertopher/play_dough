@@ -1,4 +1,5 @@
-<h2>Add an Event to the Boot Callender</h2>
+<div class="this_event">
+<h2>Add an Event to the Boot Calender</h2>
 
 
 <%= form_for @event do |f| %>
@@ -27,5 +28,8 @@
 
   <p><%= f.submit %></p>
 <% end %>
-
-
+</div>
+<br/>
+<div class="event_comment_area">
+   <%= render "event_times_edit" %>
+</div>

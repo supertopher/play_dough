@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @event.event_times.build
     @phases = Phase.all
     @phases.map! {|phase| ["phase #{phase.number} in #{phase.location}", phase.id] }
+    @all_events = Event.all
   end
 
   def create
@@ -56,10 +57,10 @@ end
     ap params
   end
 
-  def delete
+  def destroy
    event = Event.find(params[:id])
    event.destroy
-    redirect_to root_path
+    redirect_to new_event_path
   end
 
 end
