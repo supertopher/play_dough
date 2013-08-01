@@ -59,7 +59,6 @@ describe "challenges" do
       visit challenge_path(challenge)
       fill_in('Attempt url goes here:', with: "http://www.memeoverflow.com")
       click_button("Submit Challenge")
-      # current_path.should == challenges_path
       page.has_content?("Completed")
     end
 
