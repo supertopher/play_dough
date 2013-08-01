@@ -189,6 +189,10 @@ code{
   float: right;
   width: 40%;
   display: block;
+  img{
+    max-width: 300px;
+    max-height: 300px;
+  }
 }
 
 .challenge_nav{

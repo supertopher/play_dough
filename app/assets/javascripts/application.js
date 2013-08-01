@@ -16,4 +16,4 @@
 //= require showdown.js
 //= require_tree .
 
-$('.welcome_title')
+// $('.welcome_title')

@@ -49,9 +49,18 @@ describe "challenges" do
       fill_in 'user[password]',               with: user.password
       click_button('Sign in')
     end
+
     it "should show title of the post" do
       visit challenge_path(challenge)
       page.should have_content(challenge.name)
+    end
+
+    it "should allow a user to sumit a link for an assignment" do
+      visit challenge_path(challenge)
+      fill_in('Attempt url goes here:', with: "http://www.memeoverflow.com")
+      click_button("Submit Challenge")
+      # current_path.should == challenges_path
+      page.has_content?("Completed")
     end
 
     it "should have a working link to edit page for staff" do
