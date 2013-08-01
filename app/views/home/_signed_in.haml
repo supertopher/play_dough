@@ -59,4 +59,4 @@
               .event_description= event.description
               .event_time= "Start time: #{event_time.start_time.strftime('%l:%M %P')}"
               .event_time= "End time: #{event_time.end_time.strftime('%l:%M %P')}"
-
+              .delete_event=link_to "Delete", event_path(event.id), :confirm => "are you sure?", :method => :delete
