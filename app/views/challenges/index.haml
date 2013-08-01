@@ -15,6 +15,11 @@
             .animated.challenge_complete{class: "fadeIn#{@random_animation.sample}"}= link_to 'Completed :D', challenge_attempt_path(this_challenge)
   -else
     %h1 Enjoy Your Day. Challenge yourself.  Breathe.
+    .recent_completed_challenges
+      %h3 Recently Completed by students:
+      -@recently_completed_challenges.each do |this_challenge_attempt|
+        %p.each_challenge_link #{this_challenge_attempt.challenge.name} Completed by: #{this_challenge_attempt.user.name} #{link_to "Link", this_challenge_attempt.url}
+
 #right_nav
   =link_to image_tag("/assets/xk.png", :title => "XKCD: Humor for Nerdy Smart People (us)"), "http://xkcd.com"
   #challenge_heads_up
