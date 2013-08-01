@@ -98,7 +98,7 @@ describe "challenges" do
     end
 
     it "students should NOT reach the new_challenge page" do
-      visi\t new_challenge_path
+      visit new_challenge_path
       page.should_not have_content("Create Challenges! You're here now")
     end
 
