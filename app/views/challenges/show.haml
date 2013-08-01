@@ -1,5 +1,10 @@
 .this_challenge
   %h1=@challenge.name
+  = form_tag '/challenge_attempts', method: 'post' do
+    = hidden_field_tag :challenge_id, @challenge.id
+    = label_tag :url, "Attempt url goes here:"
+    = text_field_tag :url, nil, class: 'form_control'
+    = submit_tag "Submit Challenge", class: 'submit_challenge_button'
   %h3.day_of_week For #{day_of_week_name(@challenge.default_day)}
   -if @challenge.required
     .true_box Core
@@ -18,7 +23,11 @@
     -@challenge.comments.each do |this_comment|
       .single_comment
         =markdown(this_comment.body).html_safe
-        .comment_email= this_comment.user.email
+        .comment_email=this_comment.user.email
+        .comment_karma
+          =link_to image_tag("upvote.gif", class: "upvote"), remote: true
+          =image_tag "downvote.gif", class: "downvote"
+          Karma: #{this_comment.karma}
         %hr
   .new_comment_form
     Comments use markdown

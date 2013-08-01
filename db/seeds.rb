@@ -69,7 +69,7 @@ mentor_night = Event.create(title: "Mentor Night", description: "Meet your mento
 engineering_empathy = Event.create(title: "Engineering Empathy", description: "learn about peanut butter")
 graduation = Event.create(title: "Phase 3 Graduates!!!", description: "Get cool dog tags n' shit.")
 friday_check_in = Event.create(title: "Friday Check-ins", description: "Talk about your feelings in a circle of friends.")
-
+demo_day = Event.create(title: "Demo Day!", description: "Show off some cool apps.",)
 
 yoga.event_times.push(EventTime.create(week: "1", day: "2", start_time: "12:30 pm", end_time: "1:30 pm" ),
                       EventTime.create(week: "1", day: "4", start_time: "12:30 pm", end_time: "1:30 pm" ),
@@ -77,6 +77,8 @@ yoga.event_times.push(EventTime.create(week: "1", day: "2", start_time: "12:30 p
                       EventTime.create(week: "2", day: "4", start_time: "12:30 pm", end_time: "1:30 pm" ),
                       EventTime.create(week: "3", day: "2", start_time: "12:30 pm", end_time: "1:30 pm" ),
                       EventTime.create(week: "3", day: "4", start_time: "12:30 pm", end_time: "1:30 pm" ))
+
+demo_day.event_times.push(EventTime.create(week: "3", day: "4", start_time: "4:00 pm", end_time: "6:00 pm"))
 
 mentor_night.event_times.push EventTime.create(week: "1", day: "2", start_time: "6:00 pm", end_time: "9:00 pm")
 
@@ -89,7 +91,8 @@ friday_check_in.event_times.push(EventTime.create(week: "1", day: "5", start_tim
                                  EventTime.create(week: "2", day: "5", start_time: "9:00 am", end_time: "9:30 am"),
                                  EventTime.create(week: "3", day: "5", start_time: "9:00 am", end_time: "9:30 am"))
 
-phase_1.events.push(yoga, mentor_night, engineering_empathy, graduation, friday_check_in)
-phase_2.events.push(engineering_empathy, graduation, friday_check_in)
-phase_3.events.push(engineering_empathy, graduation, friday_check_in)
-phase_4.events.push(engineering_empathy, graduation, friday_check_in)
+phase_1.events.push(yoga, mentor_night, engineering_empathy, graduation, friday_check_in, demo_day)
+phase_2.events.push(engineering_empathy, graduation, friday_check_in, demo_day)
+phase_3.events.push(engineering_empathy, graduation, friday_check_in, demo_day)
+phase_4.events.push(engineering_empathy, graduation, friday_check_in, demo_day)
+

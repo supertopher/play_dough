@@ -1,0 +1,5 @@
+%h1 Your attempts for #{@challenge.name}
+- @challenge_attempts.each do |chal_attempt|
+  .challenge_attempt= link_to "#{chal_attempt.url}", chal_attempt.url
+  .challenge_completed= "Completed at: #{chal_attempt.created_at}"
+

@@ -11,7 +11,7 @@ class ChallengesController < ApplicationController
       end
     end
     return unless current_user && current_user.cohort
-
+    @random_animation = ["Left", "Right"]
     # loop through all of the user's events and fill two
     # arrays, one for the day and one for the week
     phase_time = current_user.cohort.current_phase_day

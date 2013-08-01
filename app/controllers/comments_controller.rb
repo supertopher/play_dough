@@ -7,4 +7,10 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to challenge_path(@comment.challenge)
   end
+
+  def upvote
+    ap "What is up though?"
+  end
+
+
 end

@@ -30,8 +30,10 @@ class HomeController < ApplicationController
         end
       end
     end
-
     @challenges_for_today = current_user.cohort.phase.challenges.where(default_week: phase_week, default_day: phase_day)
+    cores = @challenges_for_today.select {|c| c.required? }
+    non_cores = @challenges_for_today - cores
+    @challenges_for_today = cores + non_cores
   end
 
   def show
