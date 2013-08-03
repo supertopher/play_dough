@@ -10,3 +10,11 @@ FactoryGirl.define do
     body      {Faker::Lorem.sentences(3)}
   end
 end
+
+
+# this is an awesome syntax highlighter why aren't we using this online
+
+def clint
+  return :kitty
+  
+end
