@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "challenges" do
 # describe "challenges", js: true do
   let!(:challenge) { FactoryGirl.create(:challenge) }
-  let!(:user)      { FactoryGirl.create(:user)  }
+  let!(:user)      { FactoryGirl.create(:user)      }
+  # let!(:comment)   { FactoryGirl.create(:comment)   }
 
   context "user not logged in" do
     it "should redirect a non-logged in user to root" do

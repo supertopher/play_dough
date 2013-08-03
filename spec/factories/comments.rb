@@ -3,9 +3,9 @@ require 'factory_girl'
 require 'faker'
 
 FactoryGirl.define do
-  factory :comment, :class => 'Comments' do
-    user      {rand(User.count)}
-    challenge {Challenge.last}
+  factory :comment do
+    user
+    challenge
     karma     {rand(10)}
     body      {Faker::Lorem.sentences(3)}
   end
